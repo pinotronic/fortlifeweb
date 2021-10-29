@@ -1,6 +1,21 @@
-<?php //Editar y Actualizar Persona
+<?php //Crear Persona
 $procesado = false;
 $nombre = "";
+$apellido = "";
+$direccion = "";
+$colonia = "";
+$ciudad = "";
+$estado = "";
+$correo = "";
+$clave = "";
+$foto = "";
+$telefono = "";
+$celular = "";
+$rfc = "";
+$curp = "";
+$fechaNacimiento = "";
+$status = "";
+$cargo = "";
 if(isset($_POST["nombre"])){
     $nombre = $_POST["nombre"];
 }
@@ -64,11 +79,12 @@ $cargo = "";
 if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
-if(isset($_POST["actualizar"])){
-    $nuevoProducto = new Producto("", $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
-    $nuevoProducto -> actualizar();
-    $procesado = true;
 
+if(isset($_POST["insertar"])){
+var_dump($_POST);
+    $nuevoPersona = new Administrador("", $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
+    $nuevoPersona -> insertar();
+    $procesado = true;
 }
 ?>
 <div class="container">
@@ -101,7 +117,7 @@ if(isset($_POST["actualizar"])){
         // $status = ($actPersona -> getStatus());
         // $cargo = ($actPersona -> getCargo());
         ?>
-        <form action="actualizarPersona.php?idPersona=<?php echo $idPersona; ?>" method="POST">
+        <form id="form" action="presentacion/crearPersona.php" class="bootstrap-form needs-validation" method="POST">
             <div class="form-row">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
@@ -183,7 +199,7 @@ if(isset($_POST["actualizar"])){
                     </select>
                 </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="submit" class="btn btn-pinfo" name="insertar">Crear</button>
         </form>
         </div>
     </div>

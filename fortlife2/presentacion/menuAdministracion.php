@@ -1,7 +1,6 @@
 <?php // Menu
 $administrador = new Administrador($_SESSION["id"]);
 $administrador -> consultar();
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -22,24 +21,23 @@ $administrador -> consultar();
                             <span class="navbar-toggler-icon"></span>
                     </button>
             </div>
-                    
             <div id="MenuNavegacion" class="collapse navbar-collapse" >
                 <ul class="navbar-nav mr-auto ">
                     <li class="nav-item dropdown ">
                         <a class="nav-link active dropdown-toggle" href="#"role="button" data-bs-toggle="dropdown">Crear</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.php?pid=presentacion/crearAdministrador">Administrador</a></li>
-                            <li><a class="dropdown-item" href="index.php?pid=presentacion/crearAdministrador">Agente</a></li>
+                            <li><a class="dropdown-item" href="index.php?pid=presentacion/crearPersona">Administrador</a></li>
+                            <li><a class="dropdown-item" href="index.php?pid=presentacion/crearPersona">Agente</a></li>
                         </ul>
                     </li>        
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Consultar</a>
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">25 Puntos</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="index.php?pid=presentacion/consultarAdministrador.php">Administrador</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Buscar</a>
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Polizas</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="index.php?pid=presentacion/buscarAdministrador.php">Administrador</a>
                                 </div>

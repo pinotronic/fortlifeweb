@@ -1,8 +1,8 @@
 <?php
 class Conexion {
-    private $mysqli;
-    private $resultado;
-    function abrir(){
+    public $mysqli;
+    public $resultado;
+    public function abrir(){
         $this -> mysqli = new mysqli("localhost", "root", "", "fortlife");
         $this -> mysqli -> set_charset("utf8");
         if ($this -> mysqli -> connect_errno){
@@ -19,7 +19,7 @@ class Conexion {
     } 
     function numFilas(){
         return ($this -> resultado != null) ?
-                $this -> resultado -> num_rows :0;
+                $this -> resultado -> num_rows : 0;
     }
     function extraer(){
         return $this -> resultado -> fetch_row();

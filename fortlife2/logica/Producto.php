@@ -100,4 +100,5 @@ class Producto{
         $this -> conexion -> close();
     }
 }
+
 ?>

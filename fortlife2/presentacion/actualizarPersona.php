@@ -69,10 +69,9 @@ if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
 if(isset($_POST["actualizar"])){
-    $nuevoProducto = new Producto("", $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
+    $nuevoProducto = new Administrador("", $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
     $nuevoProducto -> actualizar();
     $procesado = true;
-
 }
 ?>
 <div class="container">

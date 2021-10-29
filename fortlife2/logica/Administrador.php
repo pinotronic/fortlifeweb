@@ -122,7 +122,7 @@ class Administrador{
     function setIdAdministrador($IdAdministrador){
         $this -> idAdministrador = $IdAdministrador;
     }
-    public function __construct($pIdAdministrador ="", $pNombre = "", $pApellido = "", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo=""){
+    public function __construct($pIdAdministrador = "", $pNombre = "", $pApellido = "", $pDireccion = "", $pColonia = "", $pCiudad = "", $pEstado = "", $pCorreo = "", $pClave = "", $pFoto = "", $pTelefono = "", $pCelular = "", $pRfc = "", $pCurp = "", $pFechaNacimiento = "", $pStatus = "", $pCargo = ""){
         $this -> idAdministrador = $pIdAdministrador;
         $this -> nombre = $pNombre;
         $this -> apellido = $pApellido;
@@ -142,6 +142,17 @@ class Administrador{
         $this -> cargo = $pCargo;
         $this -> administradorDAO = new AdministradorDAO($this -> idAdministrador, $this -> nombre, $this -> apellido, $this -> direccion, $this -> colonia, $this -> ciudad, $this -> estado, $this -> correo, $this -> clave, $this -> foto, $this -> telefono, $this -> celular, $this -> rfc, $this -> curp, $this -> fechaNacimiento, $this -> status, $this -> cargo);
         $this -> conexion = new Conexion();
+    }
+    public function insertar(){
+        $this -> conexion -> abrir();
+        var_dump($this -> administradorDAO);
+        $this -> conexion -> ejecutar($this -> administradorDAO -> insertar());
+        $this -> conexion -> close();
+    }
+    function actualizar(){
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> administradorDAO -> actualizar());
+        $this -> conexion -> close();
     }
     function autenticar($correo, $clave){
         $this -> conexion -> abrir();
@@ -205,5 +216,11 @@ class Administrador{
         $this -> conexion -> close();
         return $administrador;
     }
+    function eliminar(){
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> administradorDAO -> eliminar());
+        $this -> conexion -> close();
+    }
+
 }
 ?>

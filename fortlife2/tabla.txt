@@ -1,5 +1,5 @@
-create database almacen;
-use almacen;
+create database fortlife;
+use fortlife;
 CREATE TABLE Administrador(
     idAdministrador int(11) NOT NULL AUTO_INCREMENT,
 nombre varchar(45) NOT NULL,

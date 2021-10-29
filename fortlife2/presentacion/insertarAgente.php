@@ -1,22 +1,74 @@
 <?php //Crear Persona Nueva
 $procesado = false;
-$nombre ="";
-$cantidad="";
-$precio="";
+$nombre;
+$apellido;
+$direccion;
+$colonia;
+$ciudad;
+$estado;
+$correo;
+$clave;
+$foto;
+$telefono;
+$celular;
+$rfc;
+$curp;
+$fechaNacimiento;
+$status;
+$cargo;
+
 if(isset($_POST["nombre"])){
     $nombre = $POST["nombre"];
 }
-$cantidad="";
-if(isset($_POST["cantidad"])){
-    $cantidad = $_POST["cantidad"];
-    }
-$precio="";
-if(isset($_POST["precio"])){
-    $precio = $_POST["precio"];
-}    
+if(isset($_POST["apellido"])){
+    $apellido = $POST["apellido"];
+}
+if(isset($_POST["direccion"])){
+    $direccion = $POST["direccion"];
+}
+if(isset($_POST["colonia"])){
+    $colonia = $POST["colonia"];
+}
+if(isset($_POST["ciudad"])){
+    $ciudad = $POST["ciudad"];
+}
+if(isset($_POST["estado"])){
+    $estado = $POST["estado"];
+}
+if(isset($_POST["correo"])){
+    $correo = $POST["correo"];
+}
+if(isset($_POST["clave"])){
+    $clave = $POST["clave"];
+}
+if(isset($_POST["foto"])){
+    $foto = $POST["foto"];
+}
+if(isset($_POST["telefono"])){
+    $telefono = $POST["telefono"];
+}
+if(isset($_POST["celular"])){
+    $celular = $POST["celular"];
+}
+if(isset($_POST["rfc"])){
+    $rfc = $POST["rfc"];
+}
+if(isset($_POST["curp"])){
+    $curp = $POST["curp"];
+}
+if(isset($_POST["fechaNacimiento"])){
+    $fechaNacimiento = $POST["fechaNacimiento"];
+}
+if(isset($_POST["status"])){
+    $status = $POST["status"];
+}
+if(isset($_POST["cargo"])){
+    $cargo = $POST["cargo"];
+}
+  
 if(isset($_POST["insertar"])){
-    $nuevoProducto = new Producto("", $nombre, $cantidad, $precio);
-    $nuevoProducto -> insertar();
+    $nuevoAdministrador = new Administrador("", $nombre, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
+    $nuevoAdministrador -> insertar();
     $procesado = true;
 }
 ?>
@@ -35,7 +87,7 @@ if(isset($_POST["insertar"])){
         </div>
         <?php }?>
         
-        <form id="form" method="post" action="index.php?pid=<?php echo "presentacion/insertarProducto" ?>"class="bootstrap-form needs-validation"> 
+        <form id="form" method="post" action="index.php?pid=<?php echo "presentacion/insertarAdministrador" ?>"class="bootstrap-form needs-validation"> 
         <div class="form-group">
             <label>Nombre*</label>
             <input type="text" class="form-control" name="nombre" value="". required />

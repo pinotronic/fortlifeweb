@@ -3,8 +3,9 @@
 $procesado=false;
 if(isset($_GET["action"]) && $_GET["action"]=="delete"){
     $eliminarPersona = new Administrador($_GET["idAdministrador"]);
-    $eliminarPersona -> select();
-    $eliminarPersona -> delete();
+    $eliminarPersona->eliminar();
+    //$eliminarPersona -> select();
+    //$eliminarPersona -> eliminar($idAdministrador);
 }
 ?>
 <?php if($procesado){ ?>
@@ -50,8 +51,8 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                         <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Agente'>
                         </span>
                         </a>";
-                        echo "<a href='index.php?pid=" . ("presentacion/actualizarPersona") . "& idAdministrador=" .$p -> getNombre() . "&action='delete' onclick='return confirm(\"Confirma eliminar el Agente: " .$p -> getNombre() . "\")'>
-                        <span class='fas fa-edit' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Eliminar Agente'>
+                        echo "<a href='index.php?pid=" . ("presentacion/consultarAgente") . "& idAdministrador=" .$p -> getIdAdministrador() . "&action=delete' onclick='return confirm(\"Confirma eliminar el Agente: " .$p -> getNombre() . "\")'>
+                        <span class='fas fa-cut' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Eliminar Agente'>
                         </span>
                         </a>";
                         echo "</td>";

@@ -49,5 +49,49 @@ function consultar(){
 function consultarTodo(){
     return "select idAdministrador, nombre, apellido from administrador";
 }
+function eliminar(){
+    return "delete from administrador
+    where idAdministrador = \"" . $this -> idAdministrador . "\""; 
+}
+function insertar(){
+    return "insert into administrador ( nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo)
+            values (\"" . $this -> nombre . "\",
+                    \"" . $this -> apellido . "\",
+                   \"" . $this -> direccion . "\",
+                   \"" . $this -> colonia. "\",
+                   \"" . $this -> ciudad . "\",
+                   \"" . $this -> estado . "\",
+                   \"" . $this -> correo . "\",
+                   \"" . $this -> clave . "\",
+                   \"" . $this -> foto . "\",
+                   \"" . $this -> telefono . "\",
+                   \"" . $this -> celular . "\",
+                   \"" . $this -> rfc . "\",
+                   \"" . $this -> curp . "\",
+                   \"" . $this -> fechaNacimiento . "\",
+                   \"" . $this -> status . "\",
+                   \"" . $this -> cargo . "\")";
+}
+
+function actualizar(){
+    return "update administrador set
+            nombre = \"" . $this -> nombre . "\",
+            apellido = \"" . $this -> apellido . "\",
+            direccion = \"" . $this -> direccion . "\",
+            colonia = \"" . $this -> colonia . "\",
+            ciudad = \"" . $this -> ciudad . "\",
+            estado = \"" . $this -> estado . "\",
+            correo = \"" . $this -> correo . "\",
+            clave = \"" . $this -> clave . "\",
+            foto = \"" . $this -> foto . "\",
+            telefono = \"" . $this -> telefono . "\",
+            celular = \"" . $this -> celular . "\",
+            rfc = \"" . $this -> rfc . "\",
+            curp = \"" . $this -> curp . "\",
+            fechaNacimiento = \"" . $this -> fechaNacimiento . "\",
+            status = \"" . $this -> status . "\",
+            cargo = \"" . $this -> cargo . "\"
+            where idAdministrador = \"" . $this -> idAdministrador . "\"";
+}
 }
 ?>
