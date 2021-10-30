@@ -192,6 +192,7 @@ if(isset($_POST["insertar"])){
                 </div>
                 <button type="submit" class="btn btn-pinfo" name="insertar">Crear</button>
         </form>
+
         </div>
     </div>
 </div>

@@ -145,7 +145,6 @@ class Administrador{
     }
     public function insertar(){
         $this -> conexion -> abrir();
-        var_dump($this -> administradorDAO);
         $this -> conexion -> ejecutar($this -> administradorDAO -> insertar());
         $this -> conexion -> close();
     }

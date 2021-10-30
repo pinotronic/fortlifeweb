@@ -189,6 +189,13 @@ if(isset($_POST["actualizar"])){
                 <button type="submit" class="btn btn-primary">Actualizar</button>
 
         </form>
+        <?php 
+
+                        echo "<a href='index.php?pid=" . ("presentacion/CrearAgente") . "& idAdministrador=" . $idPersona . "'>
+                        <span class='fas fa-address-card' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Agente'>
+                        </span>
+                        </a>";
+                        ?>
         </div>
     </div>
 </div>
