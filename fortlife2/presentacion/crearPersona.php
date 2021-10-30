@@ -1,21 +1,7 @@
 <?php //Crear Persona
+include_once("logica/Administrador.php");
 $procesado = false;
 $nombre = "";
-$apellido = "";
-$direccion = "";
-$colonia = "";
-$ciudad = "";
-$estado = "";
-$correo = "";
-$clave = "";
-$foto = "";
-$telefono = "";
-$celular = "";
-$rfc = "";
-$curp = "";
-$fechaNacimiento = "";
-$status = "";
-$cargo = "";
 if(isset($_POST["nombre"])){
     $nombre = $_POST["nombre"];
 }
@@ -79,11 +65,33 @@ $cargo = "";
 if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
-
 if(isset($_POST["insertar"])){
-var_dump($_POST);
-    $nuevoPersona = new Administrador("", $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
-    $nuevoPersona -> insertar();
+// verificar que carge la clase
+    //if(class_exists("Administrador")){
+    //    echo "Encontro La clase";
+    //    $persona = new Administrador();
+    //    $persona->setNombre($nombre);
+    //    $persona->setApellido($apellido);
+    //    $persona->setDireccion($direccion);
+    //    $persona->setColonia($colonia);
+    //    $persona->setCiudad($ciudad);
+    //    $persona->setEstado($estado);
+    //    $persona->setCorreo($correo);
+    //    $persona->setClave($clave);
+    //    $persona->setFoto($foto);
+    //    $persona->setTelefono($telefono);
+    //    $persona->setCelular($celular);
+   //     $persona->setRfc($rfc);
+    //    $persona->setCurp($curp);
+    //    $persona->setFechaNacimiento($fechaNacimiento);
+    //    $persona->setStatus($status);
+    //    $persona->setCargo($cargo);
+     //   $procesado = $persona->insertar();
+    //}else{
+    //    echo "No encontro la clase";
+    //}
+    $persona = new Administrador("", $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
+    $persona -> insertar();
     $procesado = true;
 }
 ?>
@@ -99,25 +107,8 @@ var_dump($_POST);
                     <span aria-hidden="true">&times; </span>
             </button>
             </div>
-        <?php } 
-        // $nombre = ($actPersona -> getNombre());
-        // $apellido = ($actPersona -> getApellido());
-        // $direccion = ($actPersona -> getDireccion());
-        // $colonia = ($actPersona -> getColonia());
-        // $ciudad = ($actPersona -> getCiudad());
-        // $estado = ($actPersona -> getEstado());
-        // $correo = ($actPersona -> getCorreo());
-        // $clave = ($actPersona -> getClave());
-        // $foto = ($actPersona -> getFoto());
-        // $telefono = ($actPersona -> getTelefono());
-        // $celular = ($actPersona -> getCelular());
-        // $rfc = ($actPersona -> getRfc());
-        // $curp = ($actPersona -> getCurp());
-        // $fechaNacimiento = ($actPersona -> getFechaNacimiento());
-        // $status = ($actPersona -> getStatus());
-        // $cargo = ($actPersona -> getCargo());
-        ?>
-        <form id="form" action="presentacion/crearPersona.php" class="bootstrap-form needs-validation" method="POST">
+        <?php } ?>
+        <form id="form" action="" class="bootstrap-form needs-validation" method="POST">
             <div class="form-row">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
