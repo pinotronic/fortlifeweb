@@ -1,6 +1,7 @@
 <?php
 class AdministradorDAO{
     public $idAdministrador;
+    public $fecha;
     public $nombre;
     public $apellido;
     public $direccion;
@@ -17,8 +18,9 @@ class AdministradorDAO{
     public $fechaNacimiento;
     public $status;
     public $cargo;
-    public function __construct($pIdAdministrador = "", $pNombre = "", $pApellido = "", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto = "", $pTelefono="", $pCelular="", $prfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo=""){
+    public function __construct($pIdAdministrador = "", $pFecha="", $pNombre = "", $pApellido = "", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto = "", $pTelefono="", $pCelular="", $prfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo=""){
         $this -> idAdministrador = $pIdAdministrador;
+        $this -> fecha = $pFecha;       
         $this -> nombre = $pNombre;
         $this -> apellido = $pApellido;
         $this -> direccion = $pDireccion;
@@ -37,12 +39,12 @@ class AdministradorDAO{
         $this -> cargo = $pCargo;
     }
 function autenticar($correo, $clave){
-    return "select idAdministrador, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo
+    return "select idAdministrador, fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo
                 from administrador
                 where correo = \"" . $correo . "\" and clave =\"" . md5($clave) . "\"";
 }
 function consultar(){
-    return "select idAdministrador, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo
+    return "select idAdministrador, fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo
                 from administrador
                 where idAdministrador = \"" . $this -> idAdministrador . "\"";
 }
@@ -54,15 +56,18 @@ function eliminar(){
     where idAdministrador = \"" . $this -> idAdministrador . "\""; 
 }
 function insertar(){
-    return "insert into administrador ( nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo)
-            values (\"" . $this -> nombre . "\",
+    $clave ="";
+    $clave = md5($this-> clave);
+    return "insert into administrador ( fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo)
+            values (\"" . $this -> fecha . "\",
+                    \"" . $this -> nombre . "\",            
                     \"" . $this -> apellido . "\",
                    \"" . $this -> direccion . "\",
                    \"" . $this -> colonia. "\",
                    \"" . $this -> ciudad . "\",
                    \"" . $this -> estado . "\",
                    \"" . $this -> correo . "\",
-                   \"" . $this -> clave . "\",
+                   \"" . $clave . "\",
                    \"" . $this -> foto . "\",
                    \"" . $this -> telefono . "\",
                    \"" . $this -> celular . "\",
@@ -75,6 +80,7 @@ function insertar(){
 
 function actualizar(){
     return "update administrador set
+            fecha = \"" . $this -> fecha . "\",
             nombre = \"" . $this -> nombre . "\",
             apellido = \"" . $this -> apellido . "\",
             direccion = \"" . $this -> direccion . "\",

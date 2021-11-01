@@ -26,6 +26,31 @@ INSERT INTO Administrador(idAdministrador, nombre, apellido, direccion, colonia,
     ("2", "patricio", "estrella", "Piña colada 36", "EL mar", "Mar","Hidalgo", "bob.esponja@gmail.com", md5("123456"), "",  "123456", "123456", "rfc123", "curp123", "fnacimiento", "1","Administracion"),
     ("3", "pino", "vargas", "Piña colada 36", "EL mar", "Mar","Hidalgo", "pinotronic@gmail.com", md5("123456"), "123456", "",  "123456", "rfc123", "curp123", "fnacimiento", "1","Agente")
 
+CREATE TABLE Administrador(
+    idAdministrador int(11) NOT NULL AUTO_INCREMENT,
+nombre varchar(45) NOT NULL,
+apellido varchar(45) NOT NULL,
+direccion varchar(45) NOT NULL,
+colonia varchar(45) NOT NULL,
+ciudad varchar(45) NOT NULL,
+estado varchar(45) NOT NULL,
+correo varchar(45) NOT NULL,
+clave varchar(45) NOT NULL,
+foto varchar(45) DEFAULT NULL,
+telefono varchar(45) DEFAULT NULL,
+celular varchar(45) DEFAULT NULL,
+rfc varchar(45) NOT NULL,
+curp varchar(45) NOT NULL,
+fechaNacimiento varchar(45) NOT NULL,
+status tinyint DEFAULT NULL,
+cargo varchar(45) NOT NULL,
+    PRIMARY KEY (idAdministrador));
+
+
+
+
+
+
 
 create database almacen;
 use almacen;

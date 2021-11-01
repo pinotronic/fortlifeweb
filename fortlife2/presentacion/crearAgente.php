@@ -1,11 +1,12 @@
 <?php // Crear Agente
 include_once("logica/Administrador.php");
 $procesado = false;
+$procesado = false;
+$idPersona = $_GET["idAdministrador"];
+$actPersona = new Administrador($idPersona);
+$actPersona -> consultar();
+$nombre = "";
 
-$idAdministrador = "";
-if(isset($_POST["idAdministrador"])){
-    $idAdministrador = $_POST["idAdministrador"];
-}
 $fechaAlta = "";
 if(isset($_POST["fechaAlta"])){
     $fechaAlta = $_POST["fechaAlta"];
@@ -67,8 +68,8 @@ if(isset($_POST["polizaRC"])){
     $polizaRC = $_POST["polizaRC"];
 }
 $fechaVigenciaRC = "";
-if(isset($_POST["fechaVigenciaRC"])){
-    $fechaVigenciaRC = $_POST["fechaVigenciaRC"];
+if(isset($_POST["fechaVigenciaPolizaRC"])){
+    $fechaVigenciaRC = $_POST["fechaVigenciaPolizaRC"];
 }
 $fechaEscuelaComercial = "";
 if(isset($_POST["fechaEscuelaComercial"])){
@@ -76,7 +77,6 @@ if(isset($_POST["fechaEscuelaComercial"])){
 }
 
 if(isset($_POST["insertar"])){
-
     $agente = new Administrador("", idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarrera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial);
     $agente -> insertar();
     $procesado = true;
@@ -85,7 +85,7 @@ if(isset($_POST["insertar"])){
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">CREAR Agente</h4>
+            <h4 class="card-title">CREAR AGENTE</h4>
         </div>
         <div class="card-body">
             <?php if($procesado){ ?>
@@ -94,18 +94,28 @@ if(isset($_POST["insertar"])){
                     <span aria-hidden="true">&times; </span>
             </button>
             </div>
-        <?php } ?>
+        <?php }    $nombre = ($actPersona -> getNombre());?>
+
         <form id="form" action="" class="bootstrap-form needs-validation" method="POST">
+
+        <div class="form-row">
+        <legend>ETAPAS DEL AGENTE</legend>
             <div class="form-row">
+
                 <div class="form-group">
                     <label for="idAdministrador">id Administrador</label>
-                    <input type="text" class="form-control" name="idAdministrador" value="">
+                    <input type="text" style="width : 80px" class="form-control" name="idAdministrador" value="<?php echo $idPersona; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" style="width : 400px" class="form-control" name="nombre" value="<?php echo $nombre; ?>">
                 </div>
                 <div class="form-group">
                     <label for="fechaAlta">fecha de Alta</label>
                     <input type="date" class="form-control" name="fechaAlta" value="">
                 </div>
             </div>
+            <legend>ETAPAS DEL AGENTE</legend>
             <div class="form-row">
                 <div class="form-group">
                     <label for="fechaEntrevistaInicial">fecha de Entrevista Inicial</label>
@@ -113,7 +123,7 @@ if(isset($_POST["insertar"])){
                 </div>
                 <div class="form-group">
                     <label for="fechaEntrevistaSeleccion">fecha de Entrevista Seleccion</label>
-                    <input type="text" class="form-control" name="fechaEntrevistaSeleccion" value="">
+                    <input type="date" class="form-control" name="fechaEntrevistaSeleccion" value="">
                 </div>
                 <div class="form-group">
                     <label for="fechaEntrevistaDirector">fechaEntrevistaDirector</label>
@@ -124,6 +134,7 @@ if(isset($_POST["insertar"])){
                     <input type="date" class="form-control" name="fechaEntrevistaCarrera" value="">
                 </div>
             </div>
+        <legend>ETAPAS DEL AGENTE</legend>
             <div class="form-row">
                 <div class="form-group">
                     <label for="plaza">plaza</label>
@@ -133,7 +144,6 @@ if(isset($_POST["insertar"])){
                     <option value="CDMX">CDMX</option> 
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="claveTemporal">claveTemporal</label>
                     <input type="text" class="form-control" name="claveTemporal" value="">
@@ -150,7 +160,7 @@ if(isset($_POST["insertar"])){
                     <label for="fechaClavePermanente">fechaClavePermanente</label>
                     <input type="date" class="form-control" name="fechaClavePermanente" value="">
                 </div>
-                </div>
+
                 <div class="form-row">
                 <div class="form-group">
                     <label for="fechaEscuelaCedula">fechaEscuelaCedula</label>
@@ -160,47 +170,40 @@ if(isset($_POST["insertar"])){
                     <label for="fechaExamen">fechaExamen</label>
                     <input type="date" class="form-control" name="fechaExamen" value="">
                 </div>
+                </div>
+        <legend>AGENTE EXPERTO</legend>
+            <div class="form-row">
                 <div class="form-group">
                     <label for="cedula">cedula</label>
                     <input type="text" class="form-control" name="cedula" value="">
-                </div>
                 </div>
                 <div class="form-group">
                     <label for="fechaVigenciaCedula">fechaVigenciaCedula</label>
                     <input type="date" class="form-control" name="fechaVigenciaCedula" value="">
                 </div>
-                </div>
+
                 <div class="form-group">
                     <label for="polizaRC">polizaRC</label>
                     <input type="text" class="form-control" name="polizaRC" value="">
                 </div>
-                </div>
+
                 <div class="form-group">
-                    <label for="fechaVigenciaRC">fechaVigenciaRC</label>
-                    <input type="date" class="form-control" name="fechaVigenciaRC" value="">
+                    <label for="fechaVigenciaPolizaRC">fecha Vigencia RC</label>
+                    <input type="date" class="form-control" name="fechaVigenciaPolizaRC" value="">
                 </div>
-                </div>
+
                 <div class="form-group">
                     <label for="fechaEscuelaComercial">fechaEscuelaComercial</label>
                     <input type="date" class="form-control" name="fechaEscuelaComercial" value="">
                 </div>
-                </div>
-
-                <div class="form-row">
-
-                <div class="form-group">
-                    <label for="fechaVigenciaCedula">fechaVigenciaCedula</label>
-                    <select id="cargo" name="cargo">
-                    <option  value="Administrador">Administrador</option> 
-                    <option value="Agente">Agente</option> 
-                    </select>
-                </div>
-                </div>
+            </div>
+            <div class="form-group">
+            <div>
                 <button type="submit" class="btn btn-pinfo" name="insertar">Crear</button>
+            </div>
         </form>
 
         </div>
     </div>
 </div>
 
-?>

@@ -1,6 +1,10 @@
 <?php //Crear Persona
 include_once("logica/Administrador.php");
 $procesado = false;
+$fecha = "";
+if(isset($_POST["fecha"])){
+    $fecha= $_POST["fecha"];
+}
 $nombre = "";
 if(isset($_POST["nombre"])){
     $nombre = $_POST["nombre"];
@@ -90,7 +94,7 @@ if(isset($_POST["insertar"])){
     //}else{
     //    echo "No encontro la clase";
     //}
-    $persona = new Administrador("", $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
+    $persona = new Administrador("", $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
     $persona -> insertar();
     $procesado = true;
 }
@@ -110,6 +114,10 @@ if(isset($_POST["insertar"])){
         <?php } ?>
         <form id="form" action="" class="bootstrap-form needs-validation" method="POST">
             <div class="form-row">
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" class="form-control" name="fecha" value="<?php $fecha=date("Y-m-d"); echo $fecha; ?>">
+                </div>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" name="nombre" value="">
@@ -170,7 +178,7 @@ if(isset($_POST["insertar"])){
                 </div>
                 <div class="form-group">
                     <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                    <input type="text" class="form-control" name="fechaNacimiento" value="">
+                    <input type="date" class="form-control" name="fechaNacimiento" value="">
                 </div>
                 </div>
                 <div class="form-row">
