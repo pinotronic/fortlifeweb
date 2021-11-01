@@ -3,6 +3,7 @@ require("persistencia/AdministradorDAO.php");
 require("persistencia/Conexion.php");
 class Administrador{
     public $idAdministrador;
+    public $fecha;
     public $nombre;
     public $apellido;
     public $direccion;
@@ -20,6 +21,12 @@ class Administrador{
     public $status;
     public $cargo;
     public $IdAdministrador;
+    function setFecha(){
+        $this->fecha = date("Y-m-d");
+    }
+    function getFecha($fecha){
+        $this->fecha = $fecha;
+    }
     function getNombre(){
         return $this -> nombre;
     }
@@ -122,8 +129,9 @@ class Administrador{
     function setIdAdministrador($IdAdministrador){
         $this -> idAdministrador = $IdAdministrador;
     }
-    public function __construct($pIdAdministrador = "", $pNombre = "", $pApellido = "", $pDireccion = "", $pColonia = "", $pCiudad = "", $pEstado = "", $pCorreo = "", $pClave = "", $pFoto = "", $pTelefono = "", $pCelular = "", $pRfc = "", $pCurp = "", $pFechaNacimiento = "", $pStatus = "", $pCargo = ""){
+    public function __construct($pIdAdministrador = "", $fecha="", $pNombre = "", $pApellido = "", $pDireccion = "", $pColonia = "", $pCiudad = "", $pEstado = "", $pCorreo = "", $pClave = "", $pFoto = "", $pTelefono = "", $pCelular = "", $pRfc = "", $pCurp = "", $pFechaNacimiento = "", $pStatus = "", $pCargo = ""){
         $this -> idAdministrador = $pIdAdministrador;
+        $this -> fecha = $fecha;
         $this -> nombre = $pNombre;
         $this -> apellido = $pApellido;
         $this -> direccion = $pDireccion;
@@ -140,7 +148,7 @@ class Administrador{
         $this -> fechaNacimiento = $pFechaNacimiento;
         $this -> status = $pStatus;
         $this -> cargo = $pCargo;
-        $this -> administradorDAO = new AdministradorDAO($this -> idAdministrador, $this -> nombre, $this -> apellido, $this -> direccion, $this -> colonia, $this -> ciudad, $this -> estado, $this -> correo, $this -> clave, $this -> foto, $this -> telefono, $this -> celular, $this -> rfc, $this -> curp, $this -> fechaNacimiento, $this -> status, $this -> cargo);
+        $this -> administradorDAO = new AdministradorDAO($this -> idAdministrador, $this -> fecha, $this -> nombre, $this -> apellido, $this -> direccion, $this -> colonia, $this -> ciudad, $this -> estado, $this -> correo, $this -> clave, $this -> foto, $this -> telefono, $this -> celular, $this -> rfc, $this -> curp, $this -> fechaNacimiento, $this -> status, $this -> cargo);
         $this -> conexion = new Conexion();
     }
     public function insertar(){
@@ -159,22 +167,23 @@ class Administrador{
         if($this -> conexion -> numFilas()==1){
             $resultado = $this -> conexion -> extraer();
             $this -> idAdministrador = $resultado[0];
-            $this -> nombre = $resultado[1];
-            $this -> apellido = $resultado[2];
-            $this -> direccion = $resultado[3];
-            $this -> colonia = $resultado[4];
-            $this -> ciudad = $resultado[5];
-            $this -> estado = $resultado[6];
-            $this -> correo = $resultado[7];
-            $this -> clave = $resultado[8];
-            $this -> foto = $resultado[9];
-            $this -> telefono = $resultado[10];
-            $this -> celular = $resultado[11];
-            $this -> rfc = $resultado[12];
-            $this -> curp = $resultado[13];
-            $this -> fechaNacimiento = $resultado[14];
-            $this -> status = $resultado[15];
-            $this -> cargo = $resultado[16];
+            $this -> fecha = $resultado[1];
+            $this -> nombre = $resultado[2];
+            $this -> apellido = $resultado[3];
+            $this -> direccion = $resultado[4];
+            $this -> colonia = $resultado[5];
+            $this -> ciudad = $resultado[6];
+            $this -> estado = $resultado[7];
+            $this -> correo = $resultado[8];
+            $this -> clave = $resultado[9];
+            $this -> foto = $resultado[10];
+            $this -> telefono = $resultado[11];
+            $this -> celular = $resultado[12];
+            $this -> rfc = $resultado[13];
+            $this -> curp = $resultado[14];
+            $this -> fechaNacimiento = $resultado[15];
+            $this -> status = $resultado[16];
+            $this -> cargo = $resultado[17];
             $this -> conexion -> close();
             return true;
         }else{
@@ -188,22 +197,23 @@ class Administrador{
         $resultado = $this -> conexion -> extraer();
         $this -> conexion -> close();
         $this -> idAdministrador = $resultado[0];
-        $this -> nombre = $resultado[1];
-        $this -> apellido = $resultado[2];
-        $this -> direccion = $resultado[3];
-        $this -> colonia = $resultado[4];
-        $this -> ciudad = $resultado[5];
-        $this -> estado = $resultado[6];
-        $this -> correo = $resultado[7];
-        $this -> clave = $resultado[8];
-        $this -> foto = $resultado[9];
-        $this -> telefono = $resultado[10];
-        $this -> celular = $resultado[11];
-        $this -> rfc = $resultado[12];
-        $this -> curp = $resultado[13];
-        $this -> fechaNacimiento = $resultado[14];
-        $this -> status = $resultado[15];
-        $this -> cargo = $resultado[16];
+        $this -> fecha = $resultado[1];
+        $this -> nombre = $resultado[2];
+        $this -> apellido = $resultado[3];
+        $this -> direccion = $resultado[4];
+        $this -> colonia = $resultado[5];
+        $this -> ciudad = $resultado[6];
+        $this -> estado = $resultado[7];
+        $this -> correo = $resultado[8];
+        $this -> clave = $resultado[9];
+        $this -> foto = $resultado[10];
+        $this -> telefono = $resultado[11];
+        $this -> celular = $resultado[12];
+        $this -> rfc = $resultado[13];
+        $this -> curp = $resultado[14];
+        $this -> fechaNacimiento = $resultado[15];
+        $this -> status = $resultado[16];
+        $this -> cargo = $resultado[17];
     }
     function consultarTodo(){
         $this -> conexion -> abrir();
