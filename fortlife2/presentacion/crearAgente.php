@@ -1,10 +1,11 @@
 <?php // Crear Agente
 include_once("logica/Agente.php");
 $procesado = false;
-var_dump($_GET);
+//var_dump($_GET);
 $idPersona = $_GET["idAdministrador"];
 $actPersona = new Agente($idPersona);
-$actPersona -> consultar();
+$actPersona -> consultarAgente($idPersona);
+var_dump($actPersona);
 $nombre = "";
 
 $idAdministrador = "";
@@ -80,8 +81,9 @@ if(isset($_POST["fechaEscuelaComercial"])){
     $fechaEscuelaComercial = $_POST["fechaEscuelaComercial"];
 }
 
-if(isset($_POST["insertar"])){
-    $agente = new Agente("", idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarrera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial);
+if(isset($_POST["actualizar"])){
+    $agente = new Agente("", $idAdministrador, $fechaAlta, $fechaEntrevistaInicial, $fechaEntrevistaSeleccion, $fechaEntrevistaDirector, $fechaEntrevistaCarrera, $plaza, $claveTemporal, $fechaClaveTemporal, $clavePermanente, $fechaClavePermanente, $fechaEscuelaCedula, $fechaExamen, $cedula, $fechaVigenciaCedula, $polizaRC, $fechaVigenciaRC, $fechaEscuelaComercial);
+    var_dump($agente);
     $agente -> insertar();
     $procesado = true;
 }
@@ -98,10 +100,30 @@ if(isset($_POST["insertar"])){
                     <span aria-hidden="true">&times; </span>
             </button>
             </div>
-        <?php }    $nombre = ($actPersona -> getNombre());?>
+        <?php }
+        $idAgente = ($actPersona -> getIdAgente());
+        $idAdministrador = ($actPersona -> getIdAdministrador());
+        $fechaAlta = ($actPersona -> getFechaAlta());
+        $fechaEntrevistaInicial = ($actPersona -> getFechaEntrevistaInicial());   
+        $fechaEntrevistaSeleccion = ($actPersona -> getFechaEntrevistaSeleccion());
+        $fechaEntrevistaDirector = ($actPersona -> getFechaEntrevistaDirector());
+        $fechaEntrevistaCarrera = ($actPersona -> getFechaEntrevistaCarrera());
+        $plaza = ($actPersona -> getPlaza()); 
+        $claveTemporal = ($actPersona -> getClaveTemporal());
+        $fechaClaveTemporal = ($actPersona -> getFechaClaveTemporal());
+        $clavePermanente = ($actPersona -> getClavePermanente());
+        $fechaClavePermanente = ($actPersona -> getClavePermanente());
+        $fechaEscuelaCedula=($actPersona -> getFechaEscuelaCedula());
+        $fechaExamen = ($actPersona -> getFechaExamen());
+        $cedula = ($actPersona -> getCedula());
+        $fechaVigenciaCedula = ($actPersona -> getFechaVigenciaCedula());
+        $polizaRC = ($actPersona -> getPolizaRC());
+        $fechaVigenciaPolizaRC = ($actPersona -> getFechaVigenciaPolizaRC());
+        $fechaEscuelaComercial = ($actPersona -> getFechaEscuelaComercial());
+        $IdAdministrador = ($actPersona -> getIdAdministrador());
+        ?>
 
         <form id="form" action="" class="bootstrap-form needs-validation" method="POST">
-
         <div class="form-row">
         <legend>ETAPAS DEL AGENTE</legend>
             <div class="form-row">
@@ -112,7 +134,7 @@ if(isset($_POST["insertar"])){
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" style="width : 400px" class="form-control" name="nombre" value="<?php echo $nombre, " ", $apellido; ?>">
+                    <input type="text" style="width : 400px" class="form-control" name="nombre" value="<?php //echo $nombre, " ", $apellido; ?>">
                 </div>
                 <div class="form-group">
                     <label for="fechaAlta">fecha de Alta</label>

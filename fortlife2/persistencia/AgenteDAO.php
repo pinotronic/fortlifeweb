@@ -46,6 +46,16 @@ class AgenteDAO{
         from agente
         where idAdministrador = \"" . $this -> idAdministrador . "\"";
     }
+    function consultarAgente(){
+        //var_dump($this -> idAdministrador);
+        return "select 	idAgente, idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial
+        from agente
+        where idAdministrador = \"" . $this -> idAdministrador . "\"";
+        
+        //return "SELECT * FROM agente WHERE idAdministrador =\"" . $this -> idAdministrador . "\"";
+        //return "SELECT * FROM agente WHERE idAdministrador = '$idAdministrador'";
+    }
+
     function consultarTodo(){
         return "select idAgente, idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial
         from agente";
