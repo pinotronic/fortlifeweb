@@ -1,8 +1,9 @@
 <?php
-require("persistencia/AdministradorDAO.php");
-require("persistencia/Conexion.php");
+require("persistencia/AgenteDAO.php");
+//require("persistencia/conexion.php");
 
 class Agente{
+    private $idAgente;
     private $idAdministrador;
     private $fechaAlta;
     private $fechaEntrevistaInicial;    
@@ -20,202 +21,197 @@ class Agente{
     private $fechaVigenciaPolizaRC;
     private $fechaEscuelaComercial;
     public $IdAdministrador;
-    function setidAdministrador(){
-        $this->idAdministrador = $idAdministrador;
+
+    function setFechaAlta($pFechaAlta){
+        $this->fechaAlta = $pFechaAlta;
     }
-    function getidAdministrador(){
-        return $this->idAdministrador;
-    }
-    function setfechaAlta(){
-        $this->fechaAlta = $fechaAlta;
-    }
-    function getfechaAlta(){
+    function getFechaAlta(){
         return $this->fechaAlta;
     }
-    function setfechaEntrevistaInicial(){
-        $this->fechaEntrevistaInicial = $fechaEntrevistaInicial;
+    function setFechaEntrevistaInicial($pFechaEntrevistaInicial){
+        $this->fechaEntrevistaInicial = $pFechaEntrevistaInicial;
     }
-    function getfechaEntrevistaInicial(){
+    function getFechaEntrevistaInicial(){
         return $this->fechaEntrevistaInicial;
     }
-    function setfechaEntrevistaSeleccion(){
-        $this->fechaEntrevistaSeleccion = $fechaEntrevistaSeleccion;
+    function setFechaEntrevistaSeleccion($pFfechaEntrevistaSeleccion){
+        $this->fechaEntrevistaSeleccion = $pFfechaEntrevistaSeleccion;
     }
-    function getfechaEntrevistaSeleccion(){
+    function getFechaEntrevistaSeleccion(){
         return $this->fechaEntrevistaSeleccion;
     }
-    function setfechaEntrevistaDirector(){
-        $this->fechaEntrevistaDirector = $fechaEntrevistaDirector;
+    function setFechaEntrevistaDirector($pFechaEntrevistaDirector){
+        $this->fechaEntrevistaDirector = $pFechaEntrevistaDirector;
     }
-    function getfechaEntrevistaDirector(){
+    function getFechaEntrevistaDirector(){
         return $this->fechaEntrevistaDirector;
     }
-    function setfechaEntrevistaCarrera(){
-        $this->fechaEntrevistaCarrera = $fechaEntrevistaCarrera;
+    function setFechaEntrevistaCarrera($pFechaEntrevistaCarrera){
+        $this->fechaEntrevistaCarrera = $pFechaEntrevistaCarrera;
     }
-
-    function getfechaEntrevistaCarrera(){
+    function getFechaEntrevistaCarrera(){
         return $this->fechaEntrevistaCarrera;
     }
-    function setplaza(){
-        $this->plaza = $plaza;
+    function setPlaza($pPlaza){
+        $this->plaza = $pPlaza;
     }
-    function getplaza(){
+    function getPlaza(){
         return $this->plaza;
     }
-    function setclaveTemporal(){
-        $this->claveTemporal = $claveTemporal;
+    function setClaveTemporal($pClaveTemporal){
+        $this->claveTemporal = $pClaveTemporal;
     }
-    function getclaveTemporal(){
+    function getClaveTemporal(){
         return $this->claveTemporal;
     }
-    function setfechaClaveTemporal(){
-        $this->fechaClaveTemporal = $fechaClaveTemporal;
+    function setFechaClaveTemporal($pFechaClaveTemporal){
+        $this->fechaClaveTemporal = $pFechaClaveTemporal;
     }
-    function getfechaClaveTemporal(){
+    function getFechaClaveTemporal(){
         return $this->fechaClaveTemporal;
     }
-    function setclavePermanente(){
-        $this->clavePermanente = $clavePermanente;
+    function setClavePermanente($pClavePermanente){
+        $this->clavePermanente = $pClavePermanente;
     }
-    function getclavePermanente(){
+    function getClavePermanente(){
         return $this->clavePermanente;
     }
-    function setfechaClavePermanente(){
-        $this->fechaClavePermanente = $fechaClavePermanente;
+    function setFechaClavePermanente($pFechaClavePermanente){
+        $this->fechaClavePermanente = $pFechaClavePermanente;
     }
-    function getfechaClavePermanente(){
+    function getFechaClavePermanente(){
         return $this->fechaClavePermanente;
     }
-    function setcedula(){
-        $this->cedula = $cedula;
+    function setFechaEscuelaCedula($pFechaEscuelaCedula){
+        $this->fechaEscuelaCedula = $pFechaEscuelaCedula;
     }
-    function getcedula(){
+    function getFechaEscuelaCedula(){
+        return $this->fechaEscuelaCedula;
+    }
+    function setFechaExamen($pFechaExamen){
+        $this->fechaExamen = $pFechaExamen;
+    }
+    function getFechaExamen(){
+        return $this->fechaExamen;
+    }
+    function setCedula($pCedula){
+        $this->cedula = $pCedula;
+    }
+    function getCedula(){
         return $this->cedula;
     }
-    function setfechaVigenciaCedula(){
-        $this->fechaVigenciaCedula = $fechaVigenciaCedula;
+    function setFechaVigenciaCedula($pFechaVigenciaCedula){
+        $this->fechaVigenciaCedula = $pFechaVigenciaCedula;
     }
-    function getfechaVigenciaCedula(){
+    function getFechaVigenciaCedula(){
         return $this->fechaVigenciaCedula;
     }
-    function setpolizaRC(){
-        $this->polizaRC = $polizaRC;
+    function setPolizaRC($pPolizaRC){
+        $this->polizaRC = $pPolizaRC;
     }
-    function getpolizaRC(){
+    function getPolizaRC(){
         return $this->polizaRC;
     }
-    function setfechaVigenciaPolizaRC(){
-        $this->fechaVigenciaPolizaRC = $fechaVigenciaPolizaRC;
+    function setFechaVigenciaPolizaRC($pFechaVigenciaPolizaRC){
+        $this->fechaVigenciaPolizaRC = $pFechaVigenciaPolizaRC;
     }
-    function getfechaVigenciaPolizaRC(){
+    function getFechaVigenciaPolizaRC(){
         return $this->fechaVigenciaPolizaRC;
     }
-    function setfechaEscuelaComercial(){
-        $this->fechaEscuelaComercial = $fechaEscuelaComercial;
+    function setFechaEscuelaComercial($pFechaEscuelaComercial){
+        $this->fechaEscuelaComercial = $pFechaEscuelaComercial;
     }
-    function getfechaEscuelaComercial(){
+    function getFechaEscuelaComercial(){
         return $this->fechaEscuelaComercial;
     }
-    public function __construct($idAdministrador="", $fechaAlta="", $fechaEntrevistaInicial="", $fechaEntrevistaSeleccion="", $fechaEntrevistaDirector="", $fechaEntrevistaCarrera="", $plaza="", $claveTemporal="", $fechaClaveTemporal="", $clavePermanente="", $fechaClavePermanente="", $cedula="", $fechaVigenciaCedula="", $polizaRC="", $fechaVigenciaPolizaRC="", $fechaEscuelaComercial=""){
-        $this->idAdministrador = $idAdministrador;
-        $this->fechaAlta = $fechaAlta;
-        $this->fechaEntrevistaInicial = $fechaEntrevistaInicial;
-        $this->fechaEntrevistaSeleccion = $fechaEntrevistaSeleccion;
-        $this->fechaEntrevistaDirector = $fechaEntrevistaDirector;
-        $this->fechaEntrevistaCarrera = $fechaEntrevistaCarrera;
-        $this->plaza = $plaza;
-        $this->claveTemporal = $claveTemporal;
-        $this->fechaClaveTemporal = $fechaClaveTemporal;
-        $this->clavePermanente = $clavePermanente;
-        $this->fechaClavePermanente = $fechaClavePermanente;
-        $this->cedula = $cedula;
-        $this->fechaVigenciaCedula = $fechaVigenciaCedula;
-        $this->polizaRC = $polizaRC;
-        $this->fechaVigenciaPolizaRC = $fechaVigenciaPolizaRC;
-        $this->fechaEscuelaComercial = $fechaEscuelaComercial;
-        $this -> agenteDao = new AgenteDao($this ->idAdministrador, $this ->fechaAlta, $this ->fechaEntrevistaInicial, $this ->fechaEntrevistaSeleccion, $this ->fechaEntrevistaDirector, $this ->fechaEntrevistaCarrera, $this ->plaza, $this ->claveTemporal, $this ->fechaClaveTemporal, $this ->clavePermanente, $this ->fechaClavePermanente, $this ->cedula, $this ->fechaVigenciaCedula, $this ->polizaRC, $this ->fechaVigenciaPolizaRC, $this ->fechaEscuelaComercial);
-        $this -> conexion = new Conexion();
+  
+    function setIdAdministrador($pIdAdministrador){
+        $this->idAdministrador = $pIdAdministrador;
+    }
+    function getIdAdministrador(){
+        return $this->idAdministrador;
+    }
+
+    function setIdAgente($pIdAgente){
+        $this->idAgente = $pIdAgente;
+    }
+    function getIdAgente(){
+        return $this->idAgente;
+    }
+    public function __construct($pIdAgente ="",$pIdAdministrador="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarrera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="",$pCedula="",  $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial=""){
+        $this -> idAgente = $pIdAgente;
+        $this -> idAdministrador = $pIdAdministrador;
+        $this->fechaAlta = $pFechaAlta;
+        $this->fechaEntrevistaInicial = $pFechaEntrevistaInicial;
+        $this->fechaEntrevistaSeleccion = $pFechaEntrevistaSeleccion;
+        $this->fechaEntrevistaDirector = $pFechaEntrevistaDirector;
+        $this->fechaEntrevistaCarrera = $pFechaEntrevistaCarrera;
+        $this->plaza = $pPlaza;
+        $this->claveTemporal = $pClaveTemporal;
+        $this->fechaClaveTemporal = $pFechaClaveTemporal;
+        $this->clavePermanente = $pClavePermanente;
+        $this->fechaClavePermanente = $pFechaClavePermanente;
+        $this -> fechaEscuelaCedula = $pFechaEscuelaCedula;
+        $this -> fechaExamen = $pFechaExamen;
+        $this->cedula = $pCedula;
+        $this->fechaVigenciaCedula = $pFechaVigenciaCedula;
+        $this->polizaRC = $pPolizaRC;
+        $this->fechaVigenciaPolizaRC = $pFechaVigenciaPolizaRC;
+        $this->fechaEscuelaComercial = $pFechaEscuelaComercial;
+        $this -> agenteDao = new AgenteDao($this -> idAgente, $this ->idAdministrador, $this ->fechaAlta, $this ->fechaEntrevistaInicial, $this ->fechaEntrevistaSeleccion, $this ->fechaEntrevistaDirector, $this ->fechaEntrevistaCarrera, $this ->plaza, $this ->claveTemporal, $this ->fechaClaveTemporal, $this ->clavePermanente, $this ->fechaClavePermanente, $this ->fechaEscuelaCedula, $this ->fechaExamen, $this ->cedula, $this ->fechaVigenciaCedula, $this ->polizaRC, $this ->fechaVigenciaPolizaRC, $this ->fechaEscuelaComercial);
+        var_dump($this -> agenteDao);
+        $this -> conexion2 = new conexion();
     }
     public function insertar(){
-        $this -> conexion -> abrir();
-        $this -> conexion -> ejecutar($this -> agenteDao -> insertar());
-        $this -> conexion -> close();
+        $this -> conexion2 -> abrir();
+        $this -> conexion2 -> ejecutar($this -> agenteDao -> insertar());
+        $this -> conexion2 -> close();
     }
     function actualizar(){
-        $this -> conexion -> abrir();
-        $this -> conexion -> ejecutar($this -> agenteDao -> actualizar());
-        $this -> conexion -> close();
+        $this -> conexion2 -> abrir();
+        $this -> conexion2 -> ejecutar($this -> agenteDao -> actualizar());
+        $this -> conexion2 -> close();
     }
-    function autenticar(){
-        $this -> conexion -> abrir();
-        $this -> conexion -> ejecutar($this -> agenteDao -> autenticar());
-        $this -> conexion -> close();
-        if($this -> conexion -> numFilas() == 1){
-            $resultado = $this -> conexion -> extraer();
-            $this -> idAdministrador = $resultado[0];
-            $this -> fechaAlta = $resultado[1];
-            $this -> fechaEntrevistaInicial = $resultado[2];
-            $this -> fechaEntrevistaSeleccion = $resultado[3];
-            $this -> fechaEntrevistaDirector = $resultado[4];
-            $this -> fechaEntrevistaCarrera = $resultado[5];
-            $this -> plaza = $resultado[6];
-            $this -> claveTemporal = $resultado[7];
-            $this -> fechaClaveTemporal = $resultado[8];
-            $this -> clavePermanente = $resultado[9];
-            $this -> fechaClavePermanente = $resultado[10];
-            $this -> cedula = $resultado[11];
-            $this -> fechaVigenciaCedula = $resultado[12];
-            $this -> polizaRC = $resultado[13];
-            $this -> fechaVigenciaPolizaRC = $resultado[14];
-            $this -> fechaEscuelaComercial = $resultado[15];
-            $this -> conexion -> close();
-            return true;
-        }	
-        else{
-            $this -> conexion -> close();
-            return false;
-        }
-    }
+
     function consultar(){
-        $this -> conexion -> abrir();
-        $this -> conexion -> ejecutar($this -> agenteDao -> consultar());
-        $resultado = $this -> conexion -> extraer();
-        $this -> conexion -> close();
-        $this -> idAdministrador = $resultado[0];
-        $this -> fechaAlta = $resultado[1];
-        $this -> fechaEntrevistaInicial = $resultado[2];
-        $this -> fechaEntrevistaSeleccion = $resultado[3];
-        $this -> fechaEntrevistaDirector = $resultado[4];
-        $this -> fechaEntrevistaCarrera = $resultado[5];
-        $this -> plaza = $resultado[6];
-        $this -> claveTemporal = $resultado[7];
-        $this -> fechaClaveTemporal = $resultado[8];
-        $this -> clavePermanente = $resultado[9];
-        $this -> fechaClavePermanente = $resultado[10];
-        $this -> cedula = $resultado[11];
-        $this -> fechaVigenciaCedula = $resultado[12];
-        $this -> polizaRC = $resultado[13];
-        $this -> fechaVigenciaPolizaRC = $resultado[14];
-        $this -> fechaEscuelaComercial = $resultado[15];
+        $this -> conexion2 -> abrir();
+        $this -> conexion2 -> ejecutar($this -> agenteDao -> consultar());
+        $resultado = $this -> conexion2 -> extraer();
+        $this -> conexion2 -> close();
+        $this -> idAgente = $resultado[0];
+        $this -> idAdministrador = $resultado[1];
+        $this -> fechaAlta = $resultado[2];
+        $this -> fechaEntrevistaInicial = $resultado[3];
+        $this -> fechaEntrevistaSeleccion = $resultado[4];
+        $this -> fechaEntrevistaDirector = $resultado[5];
+        $this -> fechaEntrevistaCarrera = $resultado[6];
+        $this -> plaza = $resultado[7];
+        $this -> claveTemporal = $resultado[8];
+        $this -> fechaClaveTemporal = $resultado[9];
+        $this -> clavePermanente = $resultado[10];
+        $this -> fechaClavePermanente = $resultado[11];
+        $this -> fechaEscuelaCedula= $resultado[12];
+        $this -> fechaExamen = $resultado[13];
+        $this -> cedula = $resultado[14];
+        $this -> fechaVigenciaCedula = $resultado[15];
+        $this -> polizaRC = $resultado[16];
+        $this -> fechaVigenciaPolizaRC = $resultado[17];
+        $this -> fechaEscuelaComercial = $resultado[18];
     }
     function consultarTodos(){
-        $this -> conexion -> abrir();
-        $this -> conexion -> ejecutar($this -> agenteDao -> consultarTodos());
+        $this -> conexion2 -> abrir();
+        $this -> conexion2 -> ejecutar($this -> agenteDao -> consultarTodos());
         $administrador = array();
-        while ($resultado = $this -> conexion -> extraer()){
-            array_push($administrador, new Agente($resultado[0], $resultado[1], $resultado[2], $resultado[3], $resultado[4], $resultado[5], $resultado[6], $resultado[7], $resultado[8], $resultado[9], $resultado[10], $resultado[11], $resultado[12], $resultado[13], $resultado[14], $resultado[15]));
+        while ($resultado = $this -> conexion2 -> extraer()){
+            array_push($administrador, new Agente($resultado[0], $resultado[1], $resultado[2], $resultado[3], $resultado[4], $resultado[5], $resultado[6], $resultado[7], $resultado[8], $resultado[9], $resultado[10], $resultado[11], $resultado[12], $resultado[13], $resultado[14], $resultado[15], $resultado[16], $resultado[17], $resultado[18], $resultado[19]));
         }
-        $this -> conexion -> close();
+        $this -> conexion2 -> close();
         return $resultado;
     }
 function eliminar(){
-        $this -> conexion -> abrir();
-        $this -> conexion -> ejecutar($this -> agenteDao -> eliminar());
-        $this -> conexion -> close();
+        $this -> conexion2 -> abrir();
+        $this -> conexion2 -> ejecutar($this -> agenteDao -> eliminar());
+        $this -> conexion2 -> close();
     }
-
-
-
 }
 ?>

@@ -21,16 +21,17 @@ class Administrador{
     public $status;
     public $cargo;
     public $IdAdministrador;
-    function setFecha(){
-        $this->fecha = date("Y-m-d");
+
+    function getFecha(){
+        return $this -> fecha;
     }
-    function getFecha($fecha){
-        $this->fecha = $fecha;
+    function setFecha($pfecha){
+        $this -> fecha = $pfecha;
     }
     function getNombre(){
         return $this -> nombre;
     }
-    function setNombre($nombre){
+    function setNombre($pNombre){
         $this -> nombre = $pNombre;
     }
     function getApellido(){
@@ -126,12 +127,12 @@ class Administrador{
     function getIdAdministrador(){
         return $this -> idAdministrador;
     }
-    function setIdAdministrador($IdAdministrador){
-        $this -> idAdministrador = $IdAdministrador;
-    }
-    public function __construct($pIdAdministrador = "", $fecha="", $pNombre = "", $pApellido = "", $pDireccion = "", $pColonia = "", $pCiudad = "", $pEstado = "", $pCorreo = "", $pClave = "", $pFoto = "", $pTelefono = "", $pCelular = "", $pRfc = "", $pCurp = "", $pFechaNacimiento = "", $pStatus = "", $pCargo = ""){
+    function setIdAdministrador($pIdAdministrador){
         $this -> idAdministrador = $pIdAdministrador;
-        $this -> fecha = $fecha;
+    }
+    public function __construct($pIdAdministrador = "", $pfecha="", $pNombre = "", $pApellido = "", $pDireccion = "", $pColonia = "", $pCiudad = "", $pEstado = "", $pCorreo = "", $pClave = "", $pFoto = "", $pTelefono = "", $pCelular = "", $pRfc = "", $pCurp = "", $pFechaNacimiento = "", $pStatus = "", $pCargo = ""){
+        $this -> idAdministrador = $pIdAdministrador;
+        $this -> fecha = $pfecha;
         $this -> nombre = $pNombre;
         $this -> apellido = $pApellido;
         $this -> direccion = $pDireccion;
@@ -220,7 +221,24 @@ class Administrador{
         $this -> conexion -> ejecutar($this -> administradorDAO -> consultarTodo());
         $administrador = array();
         while ($resultado = $this -> conexion -> extraer()){
-            array_push($administrador, new Administrador($resultado[0], $resultado[1], $resultado[2]));
+            array_push($administrador, new Administrador($resultado[0],
+             $resultado[1], 
+             $resultado[2],
+             $resultado[3],
+             $resultado[4],
+             $resultado[5],
+             $resultado[6],
+             $resultado[7],
+             $resultado[8],
+             $resultado[9],
+             $resultado[10],
+             $resultado[11],
+             $resultado[12],
+             $resultado[13],
+             $resultado[14],
+             $resultado[15],
+             $resultado[16],
+             $resultado[17]));
         }
         $this -> conexion -> close();
         return $administrador;
@@ -230,6 +248,5 @@ class Administrador{
         $this -> conexion -> ejecutar($this -> administradorDAO -> eliminar());
         $this -> conexion -> close();
     }
-
 }
 ?>

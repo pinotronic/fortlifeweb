@@ -46,7 +46,27 @@ status tinyint DEFAULT NULL,
 cargo varchar(45) NOT NULL,
     PRIMARY KEY (idAdministrador));
 
-
+use fortlife;
+CREATE TABLE Agente(
+    idAgente int(11) NOT NULL AUTO_INCREMENT,
+idAdministrador int(11) NOT NULL,
+fechaAlta date NOT NULL,
+fechaEntrevistaInicial date NOT NULL,
+fechaEntrevistaSeleccion date NOT NULL,
+fechaEntrevistaCarera date NOT NULL,
+plaza varchar(45) NOT NULL,
+claveTemporal varchar(45) NOT NULL,
+fechaClaveTemporal date NOT NULL,
+clavePermanente varchar(45) DEFAULT NULL,
+fechaClavePermanente date DEFAULT NULL,
+fechaEscuelaCedula date DEFAULT NULL,
+fechaExamen date NOT NULL,
+cedula varchar(45) NOT NULL,
+fechaVigenciaCedula date NOT NULL,
+polizaRC varchar(45) DEFAULT NULL,
+fechaVigenciaRC date NOT NULL,
+fechaEscuelaComercial date NOT NULL,
+    PRIMARY KEY (idAgente));
 
 
 

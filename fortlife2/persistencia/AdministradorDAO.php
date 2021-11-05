@@ -39,9 +39,11 @@ class AdministradorDAO{
         $this -> cargo = $pCargo;
     }
 function autenticar($correo, $clave){
-    return "select idAdministrador, fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo
-                from administrador
-                where correo = \"" . $correo . "\" and clave =\"" . md5($clave) . "\"";
+    return "SELECT * FROM administrador WHERE correo = '$correo' AND clave = \"" . md5($clave) . "\"";
+
+    //return "select idAdministrador, fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo
+    //            from administrador
+    //            where correo = \"" . $correo . "\" and clave =\"" . md5($clave) . "\"";
 }
 function consultar(){
     return "select idAdministrador, fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo
@@ -49,7 +51,7 @@ function consultar(){
                 where idAdministrador = \"" . $this -> idAdministrador . "\"";
 }
 function consultarTodo(){
-    return "select idAdministrador, nombre, apellido from administrador";
+    return "select idAdministrador, fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo from administrador";
 }
 function eliminar(){
     return "delete from administrador

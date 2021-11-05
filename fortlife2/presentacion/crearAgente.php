@@ -1,12 +1,16 @@
 <?php // Crear Agente
-include_once("logica/Administrador.php");
+include_once("logica/Agente.php");
 $procesado = false;
-$procesado = false;
+var_dump($_GET);
 $idPersona = $_GET["idAdministrador"];
-$actPersona = new Administrador($idPersona);
+$actPersona = new Agente($idPersona);
 $actPersona -> consultar();
 $nombre = "";
 
+$idAdministrador = "";
+if(isset($_POST["idAdministrador"])){
+    $idAdministrador = $_POST["idAdministrador"];
+}
 $fechaAlta = "";
 if(isset($_POST["fechaAlta"])){
     $fechaAlta = $_POST["fechaAlta"];
@@ -77,7 +81,7 @@ if(isset($_POST["fechaEscuelaComercial"])){
 }
 
 if(isset($_POST["insertar"])){
-    $agente = new Administrador("", idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarrera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial);
+    $agente = new Agente("", idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarrera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial);
     $agente -> insertar();
     $procesado = true;
 }
@@ -108,7 +112,7 @@ if(isset($_POST["insertar"])){
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" style="width : 400px" class="form-control" name="nombre" value="<?php echo $nombre; ?>">
+                    <input type="text" style="width : 400px" class="form-control" name="nombre" value="<?php echo $nombre, " ", $apellido; ?>">
                 </div>
                 <div class="form-group">
                     <label for="fechaAlta">fecha de Alta</label>
@@ -197,7 +201,6 @@ if(isset($_POST["insertar"])){
                     <input type="date" class="form-control" name="fechaEscuelaComercial" value="">
                 </div>
             </div>
-            <div class="form-group">
             <div>
                 <button type="submit" class="btn btn-pinfo" name="insertar">Crear</button>
             </div>

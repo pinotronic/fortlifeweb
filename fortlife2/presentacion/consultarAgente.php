@@ -35,6 +35,7 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                             <th>Id Persona</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
+                            <th>Cargo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +47,7 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                         echo "<td>" . $p -> getIdAdministrador() . "</td>"; 
                         echo "<td>" . $p -> getNombre() . "</td>"; 
                         echo "<td>" . $p -> getApellido() . "</td>"; 
+                        echo "<td>" . $p -> getCargo() . "</td>"; 
                         echo "<td nowrap>";
                         echo "<a href='index.php?pid=" . ("presentacion/actualizarPersona") . "& idAdministrador=" . $p -> getIdAdministrador() . "'>
                         <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Agente'>

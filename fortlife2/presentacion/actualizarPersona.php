@@ -5,6 +5,7 @@ $idPersona = $_GET["idAdministrador"];
 $actPersona = new Administrador($idPersona);
 $actPersona -> consultar();
 $nombre = "";
+
 $fecha = date("Y-m-d");
 if(isset($_POST["nombre"])){
     $nombre = $_POST["nombre"];
@@ -88,6 +89,7 @@ if(isset($_POST["actualizar"])){
             </button>
             </div>
         <?php } 
+
         $nombre = ($actPersona -> getNombre());
         $apellido = ($actPersona -> getApellido());
         $direccion = ($actPersona -> getDireccion());
@@ -107,6 +109,10 @@ if(isset($_POST["actualizar"])){
         ?>
         <form action="actualizarPersona.php?idPersona=<?php echo $idPersona; ?>" method="POST">
             <div class="form-row">
+            <div class="form-group">
+                    <label for="idAdministrador">Id</label>
+                    <input type="text" class="form-control" name="idAdministrador" value="<?php echo $idPersona; ?>">
+                </div>
             <div class="form-group">
                     <label for="fecha">Fecha</label>
                     <input type="text" class="form-control" name="fecha" value="<?php echo $fecha; ?>">
@@ -196,11 +202,11 @@ if(isset($_POST["actualizar"])){
         </form>
         <?php 
 
-                        echo "<a href='index.php?pid=" . ("presentacion/CrearAgente") . "& idAdministrador=" . $idPersona . "'>
+                        echo "<a href='index.php?pid=" . ("presentacion/CrearAgente") . "&idAdministrador=" . $idPersona . "'>
                         <span class='fas fa-address-card' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='CrearAgente'>
                         </span>
                         </a>";
-                        echo "<a href='index.php?pid=" . ("presentacion/CrearAgente") . "& idAdministrador=" . $idPersona . "'>
+                        echo "<a href='index.php?pid=" . ("presentacion/CrearAgente") . "&idAdministrador=" . $idPersona . "'>
                         <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Agente'>
                         </span>
                         </a>";
