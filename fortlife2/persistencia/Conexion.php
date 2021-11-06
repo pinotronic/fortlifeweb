@@ -8,7 +8,7 @@ class Conexion {
         if ($this -> mysqli -> connect_errno){
             echo "fallo la conexion";
             }else{
-            echo "exito";
+            echo "";
             }
     }
     function ejecutar($sentencia){

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("logica/Administrador.php");
+include_once("logica/Agente.php");
 if(isset($_GET["salida"])){
     $_SESSION["id"]="";
 }

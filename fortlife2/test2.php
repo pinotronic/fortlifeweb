@@ -1,6 +1,6 @@
 <?php
-require("logica/Agente.php");
-//require("persistencia/Conexion.php");
+//require("logica/Agente.php");
+require("persistencia/Conexion.php");
 $fechaAlta=""; 
 $fechaEntrevistaInicial="";   
 $fechaEntrevistaSeleccion=""; 
@@ -16,11 +16,13 @@ $fechaVigenciaCedula="";
 $polizaRC=""; 
 $fechaVigenciaPolizaRC=""; 
 $fechaEscuelaComercial=""; 
-$IdAdministrador=""; 
-$nuevoAgente = new Agente();
-$nuevoAgente->setFechaAlta($fechaAlta);
-$this -> conexion2 -> abrir();
-$this -> conexion2 -> ejecutar($this -> agenteDao -> consultarAgente());
-$resultado = $this -> conexion2 -> extraer();
-var_dump($resultado);
-    ?>
+$IdAdministrador="3"; 
+
+# conectar a la base de datos y buscar por idAdministrador
+$conexion = new Conexion();
+$conexion->abrir();
+$sql = "SELECT * FROM agente WHERE IdAdministrador='$IdAdministrador'";
+$resultado = $conexion->ejecutar($sql);
+$fila = $conexion->extraer($resultado);
+
+var_dump($fila);

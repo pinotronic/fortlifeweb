@@ -5,7 +5,7 @@ $procesado = false;
 $idPersona = $_GET["idAdministrador"];
 $actPersona = new Agente($idPersona);
 $actPersona -> consultarAgente($idPersona);
-var_dump($actPersona);
+//var_dump($actPersona);
 $nombre = "";
 
 $idAdministrador = "";

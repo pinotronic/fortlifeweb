@@ -1,6 +1,6 @@
 <?php
 require("persistencia/AgenteDAO.php");
-require("persistencia/Conexion.php");
+
 
 class Agente {
     public $idAgente;
@@ -194,16 +194,16 @@ class Agente {
         $this -> fechaVigenciaPolizaRC = $resultado[17];
         $this -> fechaEscuelaComercial = $resultado[18];
     }
-    function consultarAgente($idPersona){
+    function consultarAgente($idAdministrador){
+        $conexion2 = new Conexion();
         $this -> conexion2 -> abrir();
         $this -> conexion2 -> ejecutar($this -> agenteDao -> consultarAgente());
         $resultado = $this -> conexion2 -> extraer();
         var_dump($resultado);
-        if($this -> conexion2 -> numFilas() == 1){
-            $this -> conexion2 -> close();
-            $resultado = $this -> conexion2 -> extraer();
-            //var_dump($resultado);
-            $this -> conexion2 -> close();
+        //if($this -> conexion2 -> numFilas() == 1){
+           // $this -> conexion2 -> close();
+           // $resultado = $this -> conexion2 -> extraer();
+    
             $this -> idAgente = $resultado[0];
             $this -> idAdministrador = $resultado[1];
             $this -> fechaAlta = $resultado[2];
@@ -223,11 +223,12 @@ class Agente {
             $this -> polizaRC = $resultado[16];
             $this -> fechaVigenciaPolizaRC = $resultado[17];
             $this -> fechaEscuelaComercial = $resultado[18];
-            return true;
-        }else{
             $this -> conexion2 -> close();
-            return false;
-        }
+            return true;
+        //}else{
+            //$this -> conexion2 -> close();
+            //return false;
+        //}
     }
     function consultarTodos(){
         $this -> conexion2 -> abrir();

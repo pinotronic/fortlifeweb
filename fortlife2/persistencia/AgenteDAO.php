@@ -19,10 +19,10 @@ class AgenteDAO{
     public $polizaRC;
     public $fechaVigenciaPolizaRC;
     public $fechaEscuelaComercial;
-    public $IdAdministrador;
-    public function __construct($pIdAgente="", $pIdAdministrador="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarrera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="",$pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial=""){
+
+    public function __construct($pIdAgente="", $pidAdministrador="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarrera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="",$pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial=""){
         $this -> idAgente = $pIdAgente;
-        $this->idAdministrador = $pIdAdministrador;
+        $this->idAdministrador = $pidAdministrador;
         $this->fechaAlta = $pFechaAlta;
         $this->fechaEntrevistaInicial = $pFechaEntrevistaInicial;
         $this->fechaEntrevistaSeleccion = $pFechaEntrevistaSeleccion;
@@ -40,19 +40,21 @@ class AgenteDAO{
         $this->polizaRC = $pPolizaRC;
         $this->fechaVigenciaPolizaRC = $pFechaVigenciaPolizaRC;
         $this->fechaEscuelaComercial = $pFechaEscuelaComercial;
+
     }
     function consultar(){
         return "select 	idAgente, idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial
         from agente
-        where idAdministrador = \"" . $this -> idAdministrador . "\"";
+        where idAdministrador = \"" . $pidAdministrador . "\"";
     }
     function consultarAgente(){
-        //var_dump($this -> idAdministrador);
-        return "select 	idAgente, idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial
-        from agente
-        where idAdministrador = \"" . $this -> idAdministrador . "\"";
+        //vardump($idAdministrador);
+
+        //return "select 	idAgente, idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial
+        //from agente
+        //where idAdministrador = \"" . $this -> idAdministrador . "\"";
         
-        //return "SELECT * FROM agente WHERE idAdministrador =\"" . $this -> idAdministrador . "\"";
+        return "SELECT * FROM agente WHERE idAdministrador='$pidAdministrador'";
         //return "SELECT * FROM agente WHERE idAdministrador = '$idAdministrador'";
     }
 
