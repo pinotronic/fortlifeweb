@@ -102,7 +102,7 @@ if(isset($_POST["insertar"])){
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">CREAR PERSONA</h4>
+            <h4 class="card-title">CREAR Administrador</h4>
         </div>
         <div class="card-body">
             <?php if($procesado){ ?>

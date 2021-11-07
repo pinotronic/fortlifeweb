@@ -33,7 +33,14 @@ class Login{
     function getIdAgente(){
         return $this->idAgente;
     }
-     function setStatus($pStatus){
+    
+    function setIdAdministrador($pIdAdministrador){
+        $this->idAdministrador = $pIdAdministrador; 
+    }
+    function getIdAdministrador(){
+        return $this->idAdministrador;
+    }
+    function setStatus($pStatus){
         $this->status = $pStatus; 
     }
     function getStatus(){

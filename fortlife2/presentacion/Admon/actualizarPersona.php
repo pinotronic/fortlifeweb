@@ -1,5 +1,5 @@
-<?php //Objetivo: Editar / Actualizar Persona
-    // Envia: Crear Agente
+<?php //Objetivo: Editar / Actualizar Admon
+
 $procesado = false;
 $idPersona = $_GET["idAdministrador"];
 $actPersona = new Administrador($idPersona);

@@ -50,11 +50,11 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                         echo "<td>" . $p -> getApellido() . "</td>"; 
                         echo "<td>" . $p -> getCargo() . "</td>"; 
                         echo "<td nowrap>";
-                        echo "<a href='index.php?pid=" . ("presentacion/Agente/actualizarAgente") . "& idAdministrador=" . $p -> getIdAgente() . "'>
+                        echo "<a href='index.php?pid=" . ("presentacion/Agente/actualizarAgente") . "& idAgente=" . $p -> getIdAgente() . "'>
                         <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Agente'>
                         </span>
                         </a>";
-                        echo "<a href='index.php?pid=" . ("presentacion/Agente/consultarAgente") . "& idAdministrador=" .$p -> getIdAgente() . "&action=delete' onclick='return confirm(\"Confirma eliminar el Agente: " .$p -> getNombre() . "\")'>
+                        echo "<a href='index.php?pid=" . ("presentacion/Agente/consultarAgente") . "& idAgente=" .$p -> getIdAgente() . "&action=delete' onclick='return confirm(\"Confirma eliminar el Agente: " .$p -> getNombre() . "\")'>
                         <span class='fas fa-cut' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Eliminar Agente'>
                         </span>
                         </a>";
