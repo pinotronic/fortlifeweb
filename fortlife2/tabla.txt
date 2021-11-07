@@ -49,10 +49,27 @@ cargo varchar(45) NOT NULL,
 use fortlife;
 CREATE TABLE Agente(
     idAgente int(11) NOT NULL AUTO_INCREMENT,
-idAdministrador int(11) NOT NULL,
+fecha date NOT NULL,
+nombre varchar(45) NOT NULL,
+apellido varchar(45) NOT NULL,
+direccion varchar(45) NOT NULL,
+colonia varchar(45) NOT NULL,
+ciudad varchar(45) NOT NULL,
+estado varchar(45) NOT NULL,
+correo varchar(45) NOT NULL,
+clave varchar(45) NOT NULL,
+foto varchar(45) DEFAULT NULL,
+telefono varchar(45) DEFAULT NULL,
+celular varchar(45) DEFAULT NULL,
+rfc varchar(45) NOT NULL,
+curp varchar(45) NOT NULL,
+fechaNacimiento varchar(45) NOT NULL,
+status tinyint DEFAULT NULL,
+cargo varchar(45) NOT NULL,
 fechaAlta date NOT NULL,
 fechaEntrevistaInicial date NOT NULL,
 fechaEntrevistaSeleccion date NOT NULL,
+fechaEntrevistaDirector date NOT NULL,
 fechaEntrevistaCarera date NOT NULL,
 plaza varchar(45) NOT NULL,
 claveTemporal varchar(45) NOT NULL,
@@ -64,7 +81,7 @@ fechaExamen date NOT NULL,
 cedula varchar(45) NOT NULL,
 fechaVigenciaCedula date NOT NULL,
 polizaRC varchar(45) DEFAULT NULL,
-fechaVigenciaRC date NOT NULL,
+fechaVigenciaPolizaRC date NOT NULL,
 fechaEscuelaComercial date NOT NULL,
     PRIMARY KEY (idAgente));
 
@@ -86,3 +103,15 @@ INSERT INTO Producto (idProducto, nombre, cantidad, precio)
         ("1","Televisor", "10", "1000000"),
         ("2", "Computador", "50", "1200000"),
         ("3", "Tablet", "10","600000");
+
+
+
+use fortlife;
+CREATE TABLE Loginn(
+    idPersona int(11) NOT NULL AUTO_INCREMENT,
+    correo varchar(45) NOT NULL,
+    clave varchar(45) NOT NULL,
+    idAgente int(11) NOT NULL,
+    idAdministrador int(11) NOT NULL,
+    status tinyint(4) NOT NULL,
+    PRIMARY KEY (idPersona));

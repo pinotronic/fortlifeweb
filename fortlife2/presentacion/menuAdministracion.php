@@ -1,4 +1,6 @@
 <?php // Menu
+include_once("logica/Administrador.php");
+include_once("logica/Agente.php");
 $administrador = new Administrador($_SESSION["id"]);
 $administrador -> consultar();
 ?>
@@ -26,8 +28,8 @@ $administrador -> consultar();
                     <li class="nav-item dropdown ">
                         <a class="nav-link active dropdown-toggle" href="#"role="button" data-bs-toggle="dropdown">Crear</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.php?pid=presentacion/crearPersona">Administrador</a></li>
-                            <li><a class="dropdown-item" href="index.php?pid=presentacion/crearPersona">Agente</a></li>
+                            <li><a class="dropdown-item" href="index.php?pid=presentacion/Admon/consultarAdministrador">Administrador</a></li>
+                            <li><a class="dropdown-item" href="index.php?pid=presentacion/Agente/consultarAgente">Agente</a></li>
                         </ul>
                     </li>        
                             <li class="nav-item dropdown">

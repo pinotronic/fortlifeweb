@@ -1,6 +1,5 @@
 <?php
 require("persistencia/AdministradorDAO.php");
-require("persistencia/Conexion.php");
 class Administrador{
     public $idAdministrador;
     public $fecha;
@@ -196,7 +195,7 @@ class Administrador{
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> administradorDAO -> consultar());
         $resultado = $this -> conexion -> extraer();
-        $this -> conexion -> close();
+        if($resultado=null){        
         $this -> idAdministrador = $resultado[0];
         $this -> fecha = $resultado[1];
         $this -> nombre = $resultado[2];
@@ -214,7 +213,9 @@ class Administrador{
         $this -> curp = $resultado[14];
         $this -> fechaNacimiento = $resultado[15];
         $this -> status = $resultado[16];
-        $this -> cargo = $resultado[17];
+        $this -> cargo = $resultado[17];}
+
+        $this -> conexion -> close();
     }
     function consultarTodo(){
         $this -> conexion -> abrir();

@@ -5,12 +5,14 @@ if(isset($_POST["autenticar"])){
     if(isset($_POST["correo"]) && isset($_POST["clave"])){
         $correo = $_POST["correo"];
         $clave = $_POST["clave"];
-        $administrador = new Administrador();
-        if($administrador -> autenticar($correo, $clave)){
-            if($administrador -> getStatus() == 1){
-                $_SESSION["id"] = $administrador -> getIdAdministrador();
+        $login = new Login();
+        if($login -> autenticar($correo, $clave)){
+            if($login -> getStatus() == 1){
+                $_SESSION["id"] = $login -> getIdAdministrador();
+
                 $_SESSION["actor"]="Administrador";
-                echo "<script>location.href = \"index.php?pid=presentacion/consultarAgente\"</script>";
+
+                echo "<script>location.href = \"index.php?pid=presentacion/Agente/consultarAgente\"</script>";
             }else{
                 $errorHabilitacion =true;
             }
