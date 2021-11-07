@@ -43,7 +43,7 @@ class Agente{
     }
     function getIdAgente(){
         return $this->idAgente;
-    }
+    }    
     function setFecha($pFecha){
         $this->fecha = $pFecha;
     }
@@ -250,7 +250,7 @@ class Agente{
         return $this->fechaEscuelaComercial;
     }
 
-    public function __construct($pIdAgente="", $pFecha="", $pNombre="", $pApellido="", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial=""  ){
+    public function __construct($pIdAgente="", $pFecha="", $pNombre="", $pApellido="", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial="" ){
         $this -> idAgente = $pIdAgente; 
         $this -> fecha = $pFecha; 
         $this -> nombre = $pNombre; 
@@ -341,59 +341,13 @@ class Agente{
         $this -> fechaEscuelaComercial = $resultado[34];
         
     }
-    function consultarAgente($idAdministrador){
-        $conexion = new conexion();
-        $this -> conexion -> abrir();
-        $this -> conexion -> ejecutar($this -> agenteDAO -> consultarAgente());
-        $resultado = $this -> conexion -> extraer();
-            $this -> idAgente = $resultado[0];
-            $this -> fecha = $resultado[1];
-            $this -> nombre = $resultado[2];
-            $this -> apellido = $resultado[3];
-            $this -> direccion = $resultado[4];
-            $this -> colonia = $resultado[5];
-            $this -> ciudad = $resultado[6];
-            $this -> estado = $resultado[7];
-            $this -> correo = $resultado[8];
-            $this -> clave = $resultado[9];
-            $this -> foto = $resultado[10];
-            $this -> telefono = $resultado[11];
-            $this -> celular = $resultado[12];
-            $this -> rfc = $resultado[13];
-            $this -> curp = $resultado[14];
-            $this -> fechaNacimiento = $resultado[15];
-            $this -> status = $resultado[16];
-            $this -> cargo = $resultado[17];
-            $this -> fechaAlta = $resultado[18];
-            $this -> fechaEntrevistaInicial = $resultado[19];    
-            $this -> fechaEntrevistaSeleccion = $resultado[20];
-            $this -> fechaEntrevistaDirector = $resultado[21];
-            $this -> fechaEntrevistaCarrera = $resultado[22];
-            $this -> plaza = $resultado[23]; 
-            $this -> claveTemporal = $resultado[24];
-            $this -> fechaClaveTemporal = $resultado[25];
-            $this -> clavePermanente = $resultado[26];
-            $this -> fechaClavePermanente = $resultado[27];
-            $this -> fechaEscuelaCedula = $resultado[28];
-            $this -> fechaExame = $resultado[29];
-            $this -> cedula = $resultado[30];
-            $this -> fechaVigenciaCedula = $resultado[31];
-            $this -> polizaRC = $resultado[32];
-            $this -> fechaVigenciaPolizaRC = $resultado[33];
-            $this -> fechaEscuelaComercial = $resultado[34];
-            $this -> conexion -> close();
-            return true;
-        //}else{
-            //$this -> conexion -> close();
-            //return false;
-        //}
-    }
+
     function consultarTodo(){
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> agenteDAO -> consultarTodo());
-        $administrador = array();
+        $agente = array();
         while ($resultado = $this -> conexion -> extraer()){
-            array_push($administrador, new Agente($resultado[0],
+            array_push($agente, new Agente($resultado[0],
                 $resultado[1],
                 $resultado[2],
                 $resultado[3],
@@ -429,7 +383,7 @@ class Agente{
                 $resultado[33],
                 $resultado[34]));
                 $this -> conexion -> close();
-                return $resultado;
+                return $agente;
         }
 
     }

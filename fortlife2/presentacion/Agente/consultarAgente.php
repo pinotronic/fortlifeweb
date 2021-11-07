@@ -42,7 +42,7 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                     <?php
                     $agente = new Agente();
                     $agentes= $agente -> consultarTodo();
-                    var_dump($agentes);
+                    //var_dump($agente);
                     foreach ($agentes as $p){
                         echo "<tr>";
                         echo "<td>" . $p -> getIdAgente() . "</td>"; 
@@ -62,7 +62,7 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                         echo "</tr>";
                              }
                              echo "<a href='index.php?pid=" . ("presentacion/Agente/crearAgente") . "'>
-                             <p>Nuevo Persona</p>
+                             <p>Nuevo Agente</p>
                              <span class='fas fa-plus' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Crear Agente'>
                              </span>
                              </a>";

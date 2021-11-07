@@ -69,7 +69,7 @@ $administrador -> consultar();
                             </tr>
                             <tr>
                                 <th>cargo</th>
-                                <td><?php echo ($administrador -> getCargo() ?></td>
+                                <td><?php echo $administrador -> getCargo() ?></td>
                             </tr>
                         </table>
                     </div>

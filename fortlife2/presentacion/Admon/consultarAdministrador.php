@@ -4,8 +4,6 @@ $procesado=false;
 if(isset($_GET["action"]) && $_GET["action"]=="delete"){
     $eliminarPersona = new Administrador($_GET["idAdministrador"]);
     $eliminarPersona->eliminar();
-    //$eliminarPersona -> select();
-    //$eliminarPersona -> eliminar($idAdministrador);
 }
 ?>
 <?php if($procesado){ ?>
@@ -42,7 +40,7 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                     <?php
                     $administrador = new Administrador();
                     $administradores= $administrador -> consultarTodo();
-                    var_dump($administradores);
+                    //var_dump($administrador);
                     foreach ($administradores as $p){
                         echo "<tr>";
                         echo "<td>" . $p -> getIdAdministrador() . "</td>"; 
@@ -61,8 +59,8 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                         echo "</td>";
                         echo "</tr>";
                              }
-                             echo "<a href='index.php?pid=" . ("presentacion/Admon/crearPersona") . "'>
-                             <p>Nuevo Persona</p>
+                             echo "<a href='index.php?pid=" . ("presentacion/Admon/crearAdmon") . "'>
+                             <p>Nuevo Administrador</p>
                              <span class='fas fa-plus' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Crear Agente'>
                              </span>
                              </a>";
