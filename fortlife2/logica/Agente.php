@@ -250,43 +250,43 @@ class Agente{
         return $this->fechaEscuelaComercial;
     }
 
-    public function __construct($pIdAgente="", $pFecha="", $pNombre="", $pApellido="", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarrera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial=""  ){
-        $this -> idAgente = $idAgente; 
-        $this -> fecha = $fecha; 
-        $this -> nombre = $nombre; 
-        $this -> apellido = $apellido; 
-        $this -> direccion = $direccion; 
-        $this -> colonia = $colonia; 
-        $this -> ciudad = $ciudad; 
-        $this -> estado = $estado; 
-        $this -> correo = $correo; 
-        $this -> clave = $clave; 
-        $this -> foto = $foto; 
-        $this -> telefono = $telefono; 
-        $this -> celular = $celular; 
-        $this -> rfc = $rfc; 
-        $this -> curp = $curp; 
-        $this -> fechaNacimiento = $fechaNacimiento; 
-        $this -> status = $status; 
-        $this -> cargo = $cargo; 
-        $this -> fechaAlta = $fechaAlta; 
-        $this -> fechaEntrevistaInicial = $fechaEntrevistaInicial; 
-        $this -> fechaEntrevistaSeleccion = $fechaEntrevistaSeleccion; 
-        $this -> fechaEntrevistaDirector = $fechaEntrevistaDirector; 
-        $this -> fechaEntrevistaCarera = $fechaEntrevistaCarera; 
-        $this -> plaza = $plaza; 
-        $this -> claveTemporal = $claveTemporal; 
-        $this -> fechaClaveTemporal = $fechaClaveTemporal; 
-        $this -> clavePermanente = $clavePermanente; 
-        $this -> fechaClavePermanente = $fechaClavePermanente; 
-        $this -> fechaEscuelaCedula = $fechaEscuelaCedula; 
-        $this -> fechaExamen = $fechaExamen; 
-        $this -> cedula = $cedula; 
-        $this -> fechaVigenciaCedula = $fechaVigenciaCedula; 
-        $this -> polizaRC = $polizaRC; 
-        $this -> fechaVigenciaPolizaRC = $fechaVigenciaPolizaRC; 
-        $this -> fechaEscuelaComercial = $fechaEscuelaComercial; 
-        $this -> agenteDAO = new AgenteDAO($this -> idAgente, $this -> fecha, $this -> nombre, $this -> apellido, $this -> direccion, $this -> colonia, $this -> ciudad, $this -> estado, $this -> correo, $this -> clave, $this -> foto, $this -> telefono, $this -> celular, $this -> rfc, $this -> curp, $this -> fechaNacimiento, $this -> status, $this -> cargo, $this -> fechaAlta, $this -> fechaEntrevistaInicial, $this -> fechaEntrevistaSeleccion, $this -> fechaEntrevistaDirector, $this -> fechaEntrevistaCarrera, $this -> plaza, $this -> claveTemporal, $this -> fechaClaveTemporal, $this -> clavePermanente, $this -> fechaClavePermanente, $this -> fechaEscuelaCedula, $this -> fechaExame, $this -> cedula, $this -> fechaVigenciaCedula, $this -> polizaRC, $this -> fechaVigenciaPolizaRC, $this -> fechaEscuelaComercial,);
+    public function __construct($pIdAgente="", $pFecha="", $pNombre="", $pApellido="", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial=""  ){
+        $this -> idAgente = $pIdAgente; 
+        $this -> fecha = $pFecha; 
+        $this -> nombre = $pNombre; 
+        $this -> apellido = $pApellido; 
+        $this -> direccion = $pDireccion; 
+        $this -> colonia = $pColonia; 
+        $this -> ciudad = $pCiudad; 
+        $this -> estado = $pEstado; 
+        $this -> correo = $pCorreo; 
+        $this -> clave = $pClave; 
+        $this -> foto = $pFoto; 
+        $this -> telefono = $pTelefono; 
+        $this -> celular = $pCelular; 
+        $this -> rfc = $pRfc; 
+        $this -> curp = $pCurp; 
+        $this -> fechaNacimiento = $pFechaNacimiento; 
+        $this -> status = $pStatus; 
+        $this -> cargo = $pCargo; 
+        $this -> fechaAlta = $pFechaAlta; 
+        $this -> fechaEntrevistaInicial = $pFechaEntrevistaInicial; 
+        $this -> fechaEntrevistaSeleccion = $pFechaEntrevistaSeleccion; 
+        $this -> fechaEntrevistaDirector = $pFechaEntrevistaDirector; 
+        $this -> fechaEntrevistaCarrera = $pFechaEntrevistaCarera; 
+        $this -> plaza = $pPlaza; 
+        $this -> claveTemporal = $pClaveTemporal; 
+        $this -> fechaClaveTemporal = $pFechaClaveTemporal; 
+        $this -> clavePermanente = $pClavePermanente; 
+        $this -> fechaClavePermanente = $pFechaClavePermanente; 
+        $this -> fechaEscuelaCedula = $pFechaEscuelaCedula; 
+        $this -> fechaExamen = $pFechaExamen; 
+        $this -> cedula = $pCedula; 
+        $this -> fechaVigenciaCedula = $pFechaVigenciaCedula; 
+        $this -> polizaRC = $pPolizaRC; 
+        $this -> fechaVigenciaPolizaRC = $pFechaVigenciaPolizaRC; 
+        $this -> fechaEscuelaComercial = $pFechaEscuelaComercial; 
+        $this -> agenteDAO = new AgenteDAO($this -> idAgente, $this -> fecha, $this -> nombre, $this -> apellido, $this -> direccion, $this -> colonia, $this -> ciudad, $this -> estado, $this -> correo, $this -> clave, $this -> foto, $this -> telefono, $this -> celular, $this -> rfc, $this -> curp, $this -> fechaNacimiento, $this -> status, $this -> cargo, $this -> fechaAlta, $this -> fechaEntrevistaInicial, $this -> fechaEntrevistaSeleccion, $this -> fechaEntrevistaDirector, $this -> fechaEntrevistaCarrera, $this -> plaza, $this -> claveTemporal, $this -> fechaClaveTemporal, $this -> clavePermanente, $this -> fechaClavePermanente, $this -> fechaEscuelaCedula, $this -> fechaExamen, $this -> cedula, $this -> fechaVigenciaCedula, $this -> polizaRC, $this -> fechaVigenciaPolizaRC, $this -> fechaEscuelaComercial,);
         $this -> conexion = new Conexion();
     }
     public function insertar(){
@@ -346,7 +346,6 @@ class Agente{
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> agenteDAO -> consultarAgente());
         $resultado = $this -> conexion -> extraer();
-        var_dump($resultado);
             $this -> idAgente = $resultado[0];
             $this -> fecha = $resultado[1];
             $this -> nombre = $resultado[2];

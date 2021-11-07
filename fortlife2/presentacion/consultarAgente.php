@@ -40,11 +40,10 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                     </thead>
                     <tbody>
                     <?php
-                    $administrador = new Administrador();
-                    $administradores= $administrador -> consultarTodo();
-                    foreach ($administradores as $p){
+                    $agente = new Agente();
+                    $agentes= $agente -> consultarTodo();
+                    foreach ($agentes as $p){
                         echo "<tr>";
-                        echo "<td>" . $p -> getIdAdministrador() . "</td>"; 
                         echo "<td>" . $p -> getNombre() . "</td>"; 
                         echo "<td>" . $p -> getApellido() . "</td>"; 
                         echo "<td>" . $p -> getCargo() . "</td>"; 
