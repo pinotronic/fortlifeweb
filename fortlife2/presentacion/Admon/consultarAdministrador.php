@@ -49,11 +49,11 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                         echo "<td>" . $p -> getCargo() . "</td>"; 
                         echo "<td nowrap>";
                         echo "<a href='index.php?pid=" . ("presentacion/Admon/actualizarPersona") . "& idAdministrador=" . $p -> getIdAdministrador() . "'>
-                        <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Agente'>
+                        <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Administrador'>
                         </span>
                         </a>";
                         echo "<a href='index.php?pid=" . ("presentacion/Admon/consultarAgente") . "& idAdministrador=" .$p -> getIdAdministrador() . "&action=delete' onclick='return confirm(\"Confirma eliminar el Agente: " .$p -> getNombre() . "\")'>
-                        <span class='fas fa-cut' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Eliminar Agente'>
+                        <span class='fas fa-cut' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Eliminar Administrador'>
                         </span>
                         </a>";
                         echo "</td>";
@@ -61,7 +61,7 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                              }
                              echo "<a href='index.php?pid=" . ("presentacion/Admon/crearAdmon") . "'>
                              <p>Nuevo Administrador</p>
-                             <span class='fas fa-plus' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Crear Agente'>
+                             <span class='fas fa-plus' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Crear Administrador'>
                              </span>
                              </a>";
                         ?>

@@ -15,7 +15,7 @@ $administrador -> consultar();
     <div class="bg-dark">  
         <nav class="navbar navbar-expand-md   navbar-dark">
             <div class="container-fluid">
-                <a href="index.php?pid=presentacion/consultarAgente" class="navbar-brand" ><span class="fas fa-home" aria-hidden="true"></span></a>
+                <a href="index.php?pid=presentacion/Agente/consultarAgente" class="navbar-brand" ><span class="fas fa-home" aria-hidden="true"></span></a>
                     <button type="button" 
                         class="navbar-toggler" 
                         data-bs-toggle="collapse" 

@@ -1,11 +1,12 @@
 <?php //Objetivo: Editar / Actualizar Agente
 
 $procesado = false;
-$idAgente = $_GET["idAgente"];
-$actAgente = new Agente($idAgente);
+$idpersona = $_GET["idAgente"];
+//var_dump($_GET);
+$actAgente = new Agente($idpersona);
 $actAgente -> consultar();
 $nombre = "";
-
+//var_dump($_POST);
 include_once("logica/Agente.php");
 $procesado = false;
 $fecha = "";
@@ -76,8 +77,59 @@ $cargo = "";
 if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
+if(isset($_POST["fechaAlta"])){
+    $fechaAlta = $_POST["fechaAlta"];
+}
+if(isset($_POST["fechaEntrevistaInicial"])){
+    $fechaEntrevistaInicial = $_POST["fechaEntrevistaInicial"];
+}
+if(isset($_POST["fechaEntrevistaSeleccion"])){
+    $fechaEntrevistaSeleccion = $_POST["fechaEntrevistaSeleccion"];
+}
+if(isset($_POST["fechaEntrevistaDirector"])){
+    $fechaEntrevistaDirector = $_POST["fechaEntrevistaDirector"];
+}
+if(isset($_POST["fechaEntrevistaCarera"])){
+    $fechaEntrevistaCarera = $_POST["fechaEntrevistaCarera"];
+}
+if(isset($_POST["plaza"])){
+    $plaza = $_POST["plaza"];
+}
+if(isset($_POST["claveTemporal"])){
+    $claveTemporal = $_POST["claveTemporal"];
+}
+if(isset($_POST["fechaClaveTemporal"])){
+    $fechaClaveTemporal = $_POST["fechaClaveTemporal"];
+}
+if(isset($_POST["clavePermanente"])){
+    $clavePermanente = $_POST["clavePermanente"];
+}
+if(isset($_POST["fechaClavePermanente"])){
+    $fechaClavePermanente = $_POST["fechaClavePermanente"];
+}
+if(isset($_POST["fechaEscuelaCedula"])){
+    $fechaEscuelaCedula = $_POST["fechaEscuelaCedula"];
+}
+if(isset($_POST["fechaExamen"])){
+    $fechaExamen = $_POST["fechaExamen"];
+}
+if(isset($_POST["cedula"])){
+    $cedula = $_POST["cedula"];
+}
+if(isset($_POST["fechaVigenciaCedula"])){
+    $fechaVigenciaCedula = $_POST["fechaVigenciaCedula"];
+}
+if(isset($_POST["polizaRC"])){
+    $polizaRC = $_POST["polizaRC"];
+}
+if(isset($_POST["fechaVigenciaPolizaRC"])){
+    $fechaVigenciaPolizaRC = $_POST["fechaVigenciaPolizaRC"];
+}
+if(isset($_POST["fechaEscuelaComercial"])){
+    $fechaEscuelaComercial = $_POST["fechaEscuelaComercial"];
+}
 if(isset($_POST["actualizar"])){
-    $agente = new Agente("", $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
+    $agente = new Agente("", $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo, $fechaAlta, $fechaEntrevistaInicial, $fechaEntrevistaSeleccion, $fechaEntrevistaDirector, $fechaEntrevistaCarera, $plaza, $claveTemporal, $fechaClaveTemporal, $clavePermanente, $fechaClavePermanente, $fechaEscuelaCedula, $fechaExamen, $cedula, $fechaVigenciaCedula, $polizaRC, $fechaVigenciaPolizaRC, $fechaEscuelaComercial);
     $agente -> actualizar();
     $procesado = true;
 }
@@ -96,6 +148,7 @@ if(isset($_POST["actualizar"])){
                             </button>
                         </div>
                         <?php } 
+
         $fecha = ($actAgente -> getFecha());               
         $nombre = ($actAgente -> getNombre());
         $apellido = ($actAgente -> getApellido());
@@ -117,7 +170,7 @@ if(isset($_POST["actualizar"])){
         $fechaEntrevistaInicial = ($actAgente -> getFechaEntrevistaInicial()); 
         $fechaEntrevistaSeleccion = ($actAgente -> getFechaEntrevistaSeleccion()); 
         $fechaEntrevistaDirector = ($actAgente -> getFechaEntrevistaDirector()); 
-        $fechaEntrevistaCarera = ($actAgente -> getFechaEntrevistaCarera()); 
+        $fechaEntrevistaCarera = ($actAgente -> getFechaEntrevistaCarrera()); 
         $plaza = ($actAgente -> getPlaza()); 
         $claveTemporal = ($actAgente -> getClaveTemporal()); 
         $fechaClaveTemporal = ($actAgente -> getFechaClaveTemporal()); 
@@ -130,16 +183,15 @@ if(isset($_POST["actualizar"])){
         $polizaRC = ($actAgente -> getPolizaRC());  
         $fechaVigenciaPolizaRC = ($actAgente -> getFechaVigenciaPolizaRC());  
         $fechaEscuelaComercial = ($actAgente -> getFechaEscuelaComercial());  
-
-
                         ?>
-                        <form id="form" action=""actualizarPersona.php?idAgente=<?php echo $idAgente; ?>" class="bootstrap-form needs-validation" method="POST">
+                     
+                        <form id="form" action="" class="bootstrap-form needs-validation" method="POST">
                             <div class="card-header">
                                 <legend>INFORMACION PERSONAL</legend>
                                 <div class="row g-3">
                                 <div class="form-group">
-                                        <label for="idAgente">Id</label>
-                                        <input type="text" class="form-control" name="idAgente" value="<?php echo $idAgente; ?>">
+                                        <label for="">Id</label>
+                                        <input type="text" class="form-control" name="" value="<?php echo $idPersona; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="fecha">Fecha</label>
@@ -230,6 +282,10 @@ if(isset($_POST["actualizar"])){
                                 <legend>ETAPAS DEL AGENTE</legend>
                                 <div class="informacionPersonal">
                                 <div class="row g-4">
+                                <div class="form-group">
+                                            <label for="fechaAlta">Fecha Inicial</label>
+                                            <input id="fechaAlta" class="form-control" type="date" name="fechaAlta" value="<?php echo $fechaAlta; ?>">
+                                        </div>
                                         <div class="form-group">
                                             <label for="fechaEntrevistaInicial">Fecha de Entrevista Inicial</label>
                                             <input id="fechaEntrevistaInicial" class="form-control" type="date" name="fechaEntrevistaInicial" value="<?php echo $fechaEntrevistaInicial; ?>">
@@ -242,14 +298,14 @@ if(isset($_POST["actualizar"])){
 
 
                                         <div class="form-group">
-                                            <label for="fechaEntrevistaconDirector">Fecha de Entrevista con Director</label>
-                                            <input id="fechaEntrevistaconDirector" class="form-control" type="date" name="fechaEntrevistaconDirector" value="<?php echo $fechaEntrevistaSeleccion; ?>">
+                                            <label for="fechaEntrevistaDirector">Fecha de Entrevista con Director</label>
+                                            <input id="fechaEntrevistaDirector" class="form-control" type="date" name="fechaEntrevistaDirector" value="<?php echo $fechaEntrevistaDirector; ?>">
 
                                         </div>
 
                                         <div class="form-group">
                                             <label for="fechaEntrevistadecarrera">Fecha de Entrevista de carrera</label>
-                                            <input id="fechaEntrevistadecarrera" class="form-control" type="date" name="fechaEntrevistadecarrera" value="<?php echo $fechaEntrevistaCarera; ?>">
+                                            <input id="fechaEntrevistadecarrera" class="form-control" type="date" name="fechaEntrevistaCarera" value="<?php echo $fechaEntrevistaCarera; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -303,8 +359,8 @@ if(isset($_POST["actualizar"])){
                                             <input type="text" class="form-control" name="cedula" id="cedula" value="<?php echo $cedula; ?>" placeholder="# Cedula ">
                                         </div>
                                         <div class="form-group">
-                                            <label for="fechacedula">Fecha Vigencia</label>
-                                            <input id="fechacedula" class="form-control" type="date" name="fechacedula" value="<?php echo $fechaVigenciaCedula; ?>">
+                                            <label for="fechaVigenciaCedula">Fecha Vigencia</label>
+                                            <input id="fechaVigenciaCedula" class="form-control" type="date" name="fechaVigenciaCedula" value="<?php echo $fechaVigenciaCedula; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="polizaRC">Poliza RC:</label>
@@ -312,15 +368,15 @@ if(isset($_POST["actualizar"])){
                                         </div>
                                         <div class="form-group">
                                             <label for="fechavigenciaRc">Fecha Vigencia Poliza RC</label>
-                                            <input id="fechavigenciaRc" class="form-control" type="date" name="fechavigenciaRc" value="<?php echo $fechaVigenciaPolizaRC; ?>">
+                                            <input id="fechavigenciaRc" class="form-control" type="date" name="fechaVigenciaPolizaRC" value="<?php echo $fechaVigenciaPolizaRC; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="fechaescuelaComercial">Fecha EscuelaComercial</label>
-                                            <input id="fechaescuelaComercial" class="form-control" type="date" name="fechaescuelaComercial" value="<?php echo $fechaEscuelaComercial; ?>">
+                                            <input id="fechaescuelaComercial" class="form-control" type="date" name="fechaEscuelaComercial" value="<?php echo $fechaEscuelaComercial; ?>">
                                         </div>
                                     </div> 
                             </div>                
-                            <button type="submit" class="btn btn-pinfo" name="insertar">Crear</button>
+                            <button type="submit" class="btn btn-pinfo" name="actualizar">Actualizar</button>
                         </form>
                     </div>
                 </div>
