@@ -65,21 +65,25 @@ if(isset($_POST["fechaNacimiento"])){
 $status = "";
 if(isset($_POST["status"])){
     $status = $_POST["status"];
+
 }
 $cargo = "";
 if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
 if(isset($_POST["actualizar"])){
-    $nuevoProducto = new Administrador("", $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
-    $nuevoProducto -> actualizar();
+    //var_dump($_POST);
+    if($status == "on"){
+        $status = "1";}
+    $administrador = new Administrador($idPersona, $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
+    $administrador -> actualizar();
     $procesado = true;
 }
 ?>
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Editar Persona</h4>
+            <h4 class="card-title">Editar Administrador</h4>
         </div>
         <div class="card-body">
             <?php if($procesado){ ?>
@@ -107,7 +111,7 @@ if(isset($_POST["actualizar"])){
         $status = ($actPersona -> getStatus());
         $cargo = ($actPersona -> getCargo());
         ?>
-        <form action="actualizarPersona.php?idPersona=<?php echo $idPersona; ?>" method="POST">
+        <form action="" method="POST">
             <div class="form-row">
             <div class="form-group">
                     <label for="idAdministrador">Id</label>
@@ -197,20 +201,10 @@ if(isset($_POST["actualizar"])){
                     </select>
                 </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="submit" class="btn btn-primary" name="actualizar">Actualizar</button>
 
         </form>
-        <?php 
 
-                        echo "<a href='index.php?pid=" . ("presentacion/CrearAgente") . "&idAdministrador=" . $idPersona . "'>
-                        <span class='fas fa-address-card' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='CrearAgente'>
-                        </span>
-                        </a>";
-                        echo "<a href='index.php?pid=" . ("presentacion/CrearAgente") . "&idAdministrador=" . $idPersona . "'>
-                        <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Agente'>
-                        </span>
-                        </a>";
-                        ?>
         </div>
     </div>
 </div>

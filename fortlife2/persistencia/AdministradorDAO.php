@@ -37,6 +37,7 @@ class AdministradorDAO{
         $this -> fechaNacimiento = $pFechaNacimiento;
         $this -> status = $pStatus;
         $this -> cargo = $pCargo;
+        //var_dump($this -> idAdministrador);
     }
 function autenticar($correo, $clave){
     return "SELECT * FROM administrador WHERE correo = '$correo' AND clave = \"" . md5($clave) . "\"";
@@ -81,6 +82,8 @@ function insertar(){
 }
 
 function actualizar(){
+    $clave ="";
+    $clave = md5($this-> clave);
     return "update administrador set
             fecha = \"" . $this -> fecha . "\",
             nombre = \"" . $this -> nombre . "\",

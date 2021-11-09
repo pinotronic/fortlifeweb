@@ -1,9 +1,9 @@
 <?php //Objetivo: Editar / Actualizar Agente
 
 $procesado = false;
-$idpersona = $_GET["idAgente"];
+$idPersona = $_GET["idAgente"];
 //var_dump($_GET);
-$actAgente = new Agente($idpersona);
+$actAgente = new Agente($idPersona);
 $actAgente -> consultar();
 $nombre = "";
 //var_dump($_POST);
@@ -89,8 +89,8 @@ if(isset($_POST["fechaEntrevistaSeleccion"])){
 if(isset($_POST["fechaEntrevistaDirector"])){
     $fechaEntrevistaDirector = $_POST["fechaEntrevistaDirector"];
 }
-if(isset($_POST["fechaEntrevistaCarera"])){
-    $fechaEntrevistaCarera = $_POST["fechaEntrevistaCarera"];
+if(isset($_POST["fechaEntrevistaCarrera"])){
+    $fechaEntrevistaCarrera = $_POST["fechaEntrevistaCarrera"];
 }
 if(isset($_POST["plaza"])){
     $plaza = $_POST["plaza"];
@@ -129,7 +129,7 @@ if(isset($_POST["fechaEscuelaComercial"])){
     $fechaEscuelaComercial = $_POST["fechaEscuelaComercial"];
 }
 if(isset($_POST["actualizar"])){
-    $agente = new Agente("", $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo, $fechaAlta, $fechaEntrevistaInicial, $fechaEntrevistaSeleccion, $fechaEntrevistaDirector, $fechaEntrevistaCarera, $plaza, $claveTemporal, $fechaClaveTemporal, $clavePermanente, $fechaClavePermanente, $fechaEscuelaCedula, $fechaExamen, $cedula, $fechaVigenciaCedula, $polizaRC, $fechaVigenciaPolizaRC, $fechaEscuelaComercial);
+    $agente = new Agente($idPersona, $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo, $fechaAlta, $fechaEntrevistaInicial, $fechaEntrevistaSeleccion, $fechaEntrevistaDirector, $fechaEntrevistaCarrera, $plaza, $claveTemporal, $fechaClaveTemporal, $clavePermanente, $fechaClavePermanente, $fechaEscuelaCedula, $fechaExamen, $cedula, $fechaVigenciaCedula, $polizaRC, $fechaVigenciaPolizaRC, $fechaEscuelaComercial);
     $agente -> actualizar();
     $procesado = true;
 }
@@ -170,7 +170,7 @@ if(isset($_POST["actualizar"])){
         $fechaEntrevistaInicial = ($actAgente -> getFechaEntrevistaInicial()); 
         $fechaEntrevistaSeleccion = ($actAgente -> getFechaEntrevistaSeleccion()); 
         $fechaEntrevistaDirector = ($actAgente -> getFechaEntrevistaDirector()); 
-        $fechaEntrevistaCarera = ($actAgente -> getFechaEntrevistaCarrera()); 
+        $fechaEntrevistaCarrera = ($actAgente -> getFechaEntrevistaCarrera()); 
         $plaza = ($actAgente -> getPlaza()); 
         $claveTemporal = ($actAgente -> getClaveTemporal()); 
         $fechaClaveTemporal = ($actAgente -> getFechaClaveTemporal()); 
@@ -185,13 +185,13 @@ if(isset($_POST["actualizar"])){
         $fechaEscuelaComercial = ($actAgente -> getFechaEscuelaComercial());  
                         ?>
                      
-                        <form id="form" action="" class="bootstrap-form needs-validation" method="POST">
+                        <form action=""  method="POST">
                             <div class="card-header">
                                 <legend>INFORMACION PERSONAL</legend>
                                 <div class="row g-3">
                                 <div class="form-group">
-                                        <label for="">Id</label>
-                                        <input type="text" class="form-control" name="" value="<?php echo $idPersona; ?>">
+                                        <label for="idAgente">Id</label>
+                                        <input type="text" class="form-control" name="idAgente" value="<?php echo $idPersona; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="fecha">Fecha</label>
@@ -305,7 +305,7 @@ if(isset($_POST["actualizar"])){
 
                                         <div class="form-group">
                                             <label for="fechaEntrevistadecarrera">Fecha de Entrevista de carrera</label>
-                                            <input id="fechaEntrevistadecarrera" class="form-control" type="date" name="fechaEntrevistaCarera" value="<?php echo $fechaEntrevistaCarera; ?>">
+                                            <input id="fechaEntrevistadecarrera" class="form-control" type="date" name="fechaEntrevistaCarrera" value="<?php echo $fechaEntrevistaCarrera; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -376,7 +376,7 @@ if(isset($_POST["actualizar"])){
                                         </div>
                                     </div> 
                             </div>                
-                            <button type="submit" class="btn btn-pinfo" name="actualizar">Actualizar</button>
+                            <button type="submit" class="btn btn-primary" name="actualizar">Actualizar</button>
                         </form>
                     </div>
                 </div>

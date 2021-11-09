@@ -19,7 +19,7 @@ class Administrador{
     public $fechaNacimiento;
     public $status;
     public $cargo;
-    public $IdAdministrador;
+
 
     function getFecha(){
         return $this -> fecha;
@@ -123,12 +123,13 @@ class Administrador{
     function setCargo($pCargo){
         $this -> cargo = $pCargo;
     }
-    function getIdAdministrador(){
+    function getidAdministrador(){
         return $this -> idAdministrador;
     }
-    function setIdAdministrador($pIdAdministrador){
+    function setidAdministrador($pIdAdministrador){
         $this -> idAdministrador = $pIdAdministrador;
     }
+
     public function __construct($pIdAdministrador = "", $pfecha="", $pNombre = "", $pApellido = "", $pDireccion = "", $pColonia = "", $pCiudad = "", $pEstado = "", $pCorreo = "", $pClave = "", $pFoto = "", $pTelefono = "", $pCelular = "", $pRfc = "", $pCurp = "", $pFechaNacimiento = "", $pStatus = "", $pCargo = ""){
         $this -> idAdministrador = $pIdAdministrador;
         $this -> fecha = $pfecha;
@@ -150,6 +151,7 @@ class Administrador{
         $this -> cargo = $pCargo;
         $this -> administradorDAO = new AdministradorDAO($this -> idAdministrador, $this -> fecha, $this -> nombre, $this -> apellido, $this -> direccion, $this -> colonia, $this -> ciudad, $this -> estado, $this -> correo, $this -> clave, $this -> foto, $this -> telefono, $this -> celular, $this -> rfc, $this -> curp, $this -> fechaNacimiento, $this -> status, $this -> cargo);
         $this -> conexion = new Conexion();
+        //var_dump($pIdAdministrador);
     }
     public function insertar(){
         $this -> conexion -> abrir();
@@ -157,6 +159,26 @@ class Administrador{
         $this -> conexion -> close();
     }
     function actualizar(){
+        var_dump($this -> idAdministrador);
+        var_dump($this -> fecha);
+        var_dump($this -> nombre);
+        var_dump($this -> apellido);
+        var_dump($this -> direccion);
+        var_dump($this -> colonia);
+        var_dump($this -> ciudad);
+        var_dump($this -> estado);
+        var_dump($this -> correo);
+        var_dump($this -> clave);
+        var_dump($this -> foto);
+        var_dump($this -> telefono);
+        var_dump($this -> celular);
+        var_dump($this -> rfc);
+        var_dump($this -> curp);
+        var_dump($this -> fechaNacimiento);
+        var_dump($this -> status);
+        var_dump($this -> cargo);
+
+
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> administradorDAO -> actualizar());
         $this -> conexion -> close();
@@ -191,32 +213,36 @@ class Administrador{
             return false;
         }
     }
+
     function consultar(){
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> administradorDAO -> consultar());
         $resultado = $this -> conexion -> extraer();
-        if($resultado=null){        
-        $this -> idAdministrador = $resultado[0];
-        $this -> fecha = $resultado[1];
-        $this -> nombre = $resultado[2];
-        $this -> apellido = $resultado[3];
-        $this -> direccion = $resultado[4];
-        $this -> colonia = $resultado[5];
-        $this -> ciudad = $resultado[6];
-        $this -> estado = $resultado[7];
-        $this -> correo = $resultado[8];
-        $this -> clave = $resultado[9];
-        $this -> foto = $resultado[10];
-        $this -> telefono = $resultado[11];
-        $this -> celular = $resultado[12];
-        $this -> rfc = $resultado[13];
-        $this -> curp = $resultado[14];
-        $this -> fechaNacimiento = $resultado[15];
-        $this -> status = $resultado[16];
-        $this -> cargo = $resultado[17];}
-
+        if(!empty($resultado)){        
+            $this -> idAdministrador = $resultado[0];
+            $this -> fecha = $resultado[1];
+            $this -> nombre = $resultado[2];
+            $this -> apellido = $resultado[3];
+            $this -> direccion = $resultado[4];
+            $this -> colonia = $resultado[5];
+            $this -> ciudad = $resultado[6];
+            $this -> estado = $resultado[7];
+            $this -> correo = $resultado[8];
+            $this -> clave = $resultado[9];
+            $this -> foto = $resultado[10];
+            $this -> telefono = $resultado[11];
+            $this -> celular = $resultado[12];
+            $this -> rfc = $resultado[13];
+            $this -> curp = $resultado[14];
+            $this -> fechaNacimiento = $resultado[15];
+            $this -> status = $resultado[16];
+            $this -> cargo = $resultado[17];
+            $this -> conexion -> close();
+    }else{
         $this -> conexion -> close();
+        return false;
     }
+}
     function consultarTodo(){
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> administradorDAO -> consultarTodo());

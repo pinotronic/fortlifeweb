@@ -75,12 +75,12 @@ class AgenteDAO {
     function consultar(){
         return "select 	idAgente, fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarrera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaPolizaRC, fechaEscuelaComercial
         from agente
-        where idAgente = \"" . $pIdAgente . "\"";
+        where idAgente = \"" . $this -> idAgente . "\"";
     }
     function consultarAgente(){
         //vardump($idAdministrador);
 
-        //return "select 	idAgente, idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial
+        //return "select 	idAgente, idAdministrador, fechaAlta, fechaEntrevistaInicial, fechaEntrevistaSeleccion, fechaEntrevistaDirector, fechaEntrevistaCarrera, plaza, claveTemporal, fechaClaveTemporal, clavePermanente, fechaClavePermanente, fechaEscuelaCedula, fechaExamen, cedula, fechaVigenciaCedula, polizaRC, fechaVigenciaRC, fechaEscuelaComercial
         //from agente
         //where idAdministrador = \"" . $this -> idAdministrador . "\"";
         
@@ -138,6 +138,8 @@ class AgenteDAO {
                 )";
     }
     function actualizar(){
+        $clave ="";
+        $clave = md5($this-> clave);
         return "update agente set
         fecha = \"" . $this -> fecha . "\",
         nombre = \"" . $this -> nombre . "\",
@@ -172,7 +174,7 @@ class AgenteDAO {
         fechaVigenciaCedula = \"" . $this -> fechaVigenciaCedula . "\",
         polizaRC = \"" . $this -> polizaRC . "\",
         fechaVigenciaPolizaRC = \"" . $this -> fechaVigenciaPolizaRC . "\",
-        fechaEscuelaComercial = \"" . $this -> fechaEscuelaComercial"
+        fechaEscuelaComercial = \"" . $this -> fechaEscuelaComercial . "\"
         where idAgente = \"" . $this -> idAgente . "\"";
     }
 }

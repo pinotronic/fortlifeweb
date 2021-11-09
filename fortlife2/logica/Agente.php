@@ -299,7 +299,7 @@ class Agente{
         $this -> conexion -> close();
     }
     function consultar(){
-        var_dump ($this ->idAgente);
+        //var_dump ($this ->idAgente);
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> agenteDAO -> consultar());
         $resultado = $this -> conexion -> extraer();
