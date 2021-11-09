@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("logica/login.php");
+require("logica/login.php");
 require("persistencia/Conexion.php");
 if(isset($_GET["salida"])){
     $_SESSION["id"]="";

@@ -4,6 +4,8 @@ $procesado = false;
 $idPersona = $_GET["idAdministrador"];
 $actPersona = new Administrador($idPersona);
 $actPersona -> consultar();
+$login = new Login();
+$Autorizado = $login -> verificarPermiso($idPersona);
 $nombre = "";
 
 $fecha = date("Y-m-d");
@@ -72,11 +74,23 @@ if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
 if(isset($_POST["actualizar"])){
-    //var_dump($_POST);
-    if($status == "on"){
+    var_dump($_POST);
+    if($status == "checked"){
         $status = "1";}
     $administrador = new Administrador($idPersona, $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
     $administrador -> actualizar();
+    if($valorPermiso="checked"){
+        $idAgente="";
+        $idAdministrador=$idPersona;
+        var_dump($idPersona);
+        var_dump($correo);
+        var_dump($clave);
+        var_dump($idAgente);
+        var_dump($idAdministrador);
+        var_dump($status);
+        $login = new Login("", $correo, $clave, $idAgente, $idAdministrador, $status);
+        $login -> insertar();
+    }
     $procesado = true;
 }
 ?>
@@ -101,7 +115,7 @@ if(isset($_POST["actualizar"])){
         $ciudad = ($actPersona -> getCiudad());
         $estado = ($actPersona -> getEstado());
         $correo = ($actPersona -> getCorreo());
-        $clave = ($actPersona -> getClave());
+        $clave = ("");
         $foto = ($actPersona -> getFoto());
         $telefono = ($actPersona -> getTelefono());
         $celular = ($actPersona -> getCelular());
@@ -187,10 +201,18 @@ if(isset($_POST["actualizar"])){
                 <div class="form-row">
 
                 <div class="form-check">
-                    <?php  $valor=""; if($status == "1"){$valor="on";} ?>
-                    <input class="form-check-input" type="checkbox" id="status" name="status" value="<?php echo $valor; ?>"checked="<?php echo $valor; ?>">
+                    <?php  $valor=""; if($status == "1"){$valor="checked";} ?>
+                    <input class="form-check-input" type="checkbox" id="status" name="status" value="<?php echo $valor; ?>"<?php echo $valor; ?>>
+                    
                     <label class="form-check-label" for="gridCheck1">
                     Status
+                    </label>
+                </div>
+                <div class="form-check">
+                    <?php  $valorPermiso=""; if($Autorizado == "true"){$valorPermiso="checked";}?>
+                    <input class="form-check-input" type="checkbox" id="permiso" name="permiso" value="<?php echo $valorPermiso; ?>" <?php echo $valorPermiso; ?>>
+                    <label class="form-check-label" for="gridCheck1">
+                    Permiso
                     </label>
                 </div>
                 <div class="form-group">

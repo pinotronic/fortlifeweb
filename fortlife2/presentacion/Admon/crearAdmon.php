@@ -70,32 +70,11 @@ if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
 if(isset($_POST["insertar"])){
-// verificar que carge la clase
-    //if(class_exists("Administrador")){
-    //    echo "Encontro La clase";
-    //    $persona = new Administrador();
-    //    $persona->setNombre($nombre);
-    //    $persona->setApellido($apellido);
-    //    $persona->setDireccion($direccion);
-    //    $persona->setColonia($colonia);
-    //    $persona->setCiudad($ciudad);
-    //    $persona->setEstado($estado);
-    //    $persona->setCorreo($correo);
-    //    $persona->setClave($clave);
-    //    $persona->setFoto($foto);
-    //    $persona->setTelefono($telefono);
-    //    $persona->setCelular($celular);
-   //     $persona->setRfc($rfc);
-    //    $persona->setCurp($curp);
-    //    $persona->setFechaNacimiento($fechaNacimiento);
-    //    $persona->setStatus($status);
-    //    $persona->setCargo($cargo);
-     //   $procesado = $persona->insertar();
-    //}else{
-    //    echo "No encontro la clase";
-    //}
+
     $persona = new Administrador("", $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
     $persona -> insertar();
+    //$login = new Login("", $correo, $clave, $idAgente, $idAdministrador, $status);
+    //$login -> insertar();
     $procesado = true;
 }
 ?>

@@ -159,26 +159,6 @@ class Administrador{
         $this -> conexion -> close();
     }
     function actualizar(){
-        var_dump($this -> idAdministrador);
-        var_dump($this -> fecha);
-        var_dump($this -> nombre);
-        var_dump($this -> apellido);
-        var_dump($this -> direccion);
-        var_dump($this -> colonia);
-        var_dump($this -> ciudad);
-        var_dump($this -> estado);
-        var_dump($this -> correo);
-        var_dump($this -> clave);
-        var_dump($this -> foto);
-        var_dump($this -> telefono);
-        var_dump($this -> celular);
-        var_dump($this -> rfc);
-        var_dump($this -> curp);
-        var_dump($this -> fechaNacimiento);
-        var_dump($this -> status);
-        var_dump($this -> cargo);
-
-
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> administradorDAO -> actualizar());
         $this -> conexion -> close();

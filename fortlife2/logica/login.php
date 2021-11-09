@@ -63,7 +63,6 @@ class Login{
         $this -> conexion -> ejecutar($this -> loginDAO -> autenticar($correo,$clave));
         if($this -> conexion -> numFilas()==1){
             $resultado = $this -> conexion -> extraer();
-            var_dump($resultado);
             $this -> idPersona=$resultado[0];
             $this -> correo=$resultado[1];
             $this -> clave=$resultado[2];
@@ -76,6 +75,31 @@ class Login{
             $this -> conexion -> close();
             return false;
         }
+    }
+    function verificarPermiso($idAdministrador){
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> loginDAO -> buscarIdAdministrador($idAdministrador));
+        if($this -> conexion -> numFilas()==1){
+            $resultado = $this -> conexion -> extraer();
+            $this -> idAdministrador=$resultado[0];
+            $this -> status=$resultado[1];
+            $this -> conexion -> close();
+            return true;
+        }else{
+            $this -> conexion -> close();
+            return false;
+        }
+    }
+    public function insertar(){
+        var_dump($this -> idPersona);
+        var_dump($this -> correo);
+        var_dump($this -> clave);
+        var_dump($this -> idAgente);
+        var_dump($this -> idAdministrador);
+        var_dump($this -> status);
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> loginDAO -> insertar());
+        $this -> conexion -> close();
     }
 }
 
