@@ -30,17 +30,10 @@ class LoginDAO{
         return "SELECT * FROM loginn WHERE idAdministrador = '$idAdministrador'";
     }
     function insertar(){
-
-        var_dump($this -> correo);
-        var_dump($this -> $clave);
-        var_dump($this -> idAgente);
-        var_dump($this -> idAdministrador);
-        var_dump($this -> status);
         $clave ="";
         $clave = md5($this-> clave);
         return "insert into loginn ( correo, clave, idAgente, idAdministrador, status)
-                values (\"" . $this -> fecha . "\",
-                       \"" . $this -> correo . "\",
+                values (\"" . $this -> correo . "\",
                        \"" . $clave . "\",
                        \"" . $this -> idAgente . "\",
                        \"" . $this -> idAdministrador . "\",

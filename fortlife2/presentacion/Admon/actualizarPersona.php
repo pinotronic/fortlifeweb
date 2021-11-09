@@ -74,31 +74,29 @@ if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
 if(isset($_POST["actualizar"])){
-    var_dump($_POST);
+
     if($status == "checked"){
         $status = "1";}
     $administrador = new Administrador($idPersona, $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
     $administrador -> actualizar();
-    if($valorPermiso="checked"){
+    var_dump($Autorizado);
+    if( $Autorizado !=true && $valorPermiso="checked"){
         $idAgente="";
         $idAdministrador=$idPersona;
-        var_dump($idPersona);
-        var_dump($correo);
-        var_dump($clave);
-        var_dump($idAgente);
-        var_dump($idAdministrador);
-        var_dump($status);
         $login = new Login("", $correo, $clave, $idAgente, $idAdministrador, $status);
         $login -> insertar();
     }
     $procesado = true;
 }
 ?>
-<div class="container">
-    <div class="card">
-        <div class="card-header">
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
             <h4 class="card-title">Editar Administrador</h4>
         </div>
+
+
+
         <div class="card-body">
             <?php if($procesado){ ?>
             <div class="alert alert-success" >Datos Ingresados
@@ -115,7 +113,7 @@ if(isset($_POST["actualizar"])){
         $ciudad = ($actPersona -> getCiudad());
         $estado = ($actPersona -> getEstado());
         $correo = ($actPersona -> getCorreo());
-        $clave = ("");
+        $clave = ($actPersona -> getClave());
         $foto = ($actPersona -> getFoto());
         $telefono = ($actPersona -> getTelefono());
         $celular = ($actPersona -> getCelular());
@@ -169,7 +167,7 @@ if(isset($_POST["actualizar"])){
                 </div>
                 <div class="form-group">
                     <label for="clave">Clave</label>
-                    <input type="text" class="form-control" name="clave" value="">
+                    <input type="text" class="form-control" name="clave" value="<?php echo $clave; ?>">
                 </div>
                 <div class="form-group">
                     <label for="foto">Foto</label>

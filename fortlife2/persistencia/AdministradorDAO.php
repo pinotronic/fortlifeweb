@@ -59,8 +59,8 @@ function eliminar(){
     where idAdministrador = \"" . $this -> idAdministrador . "\""; 
 }
 function insertar(){
-    $clave ="";
-    $clave = md5($this-> clave);
+    //$clave ="";
+    //$clave = md5($this-> clave);
     return "insert into administrador ( fecha, nombre, apellido, direccion, colonia, ciudad, estado, correo, clave, foto, telefono, celular, rfc, curp, fechaNacimiento, status, cargo)
             values (\"" . $this -> fecha . "\",
                     \"" . $this -> nombre . "\",            
@@ -70,7 +70,7 @@ function insertar(){
                    \"" . $this -> ciudad . "\",
                    \"" . $this -> estado . "\",
                    \"" . $this -> correo . "\",
-                   \"" . $clave . "\",
+                   \"" . $this-> clave . "\",
                    \"" . $this -> foto . "\",
                    \"" . $this -> telefono . "\",
                    \"" . $this -> celular . "\",
