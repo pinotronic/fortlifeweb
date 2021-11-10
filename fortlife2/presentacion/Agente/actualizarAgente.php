@@ -7,7 +7,7 @@ $actAgente = new Agente($idPersona);
 $actAgente -> consultar();
 $nombre = "";
 //var_dump($_POST);
-include_once("logica/Agente.php");
+include_once("logica/agente.php");
 $procesado = false;
 $fecha = "";
 if(isset($_POST["fecha"])){

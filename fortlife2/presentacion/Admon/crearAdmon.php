@@ -1,5 +1,5 @@
 <?php //Crear Persona
-include_once("logica/Administrador.php");
+include_once("logica/administrador.php");
 $procesado = false;
 $fecha = "";
 if(isset($_POST["fecha"])){

@@ -12,7 +12,7 @@ if(isset($_POST["autenticar"])){
 
                 $_SESSION["actor"]="Administrador";
 
-                echo "<script>location.href = \"index.php?pid=presentacion/Agente/consultarAgente\"</script>";
+                echo "<script>location.href = \"index.php?pid=presentacion/agente/consultarAgente\"</script>";
             }else{
                 $errorHabilitacion =true;
             }

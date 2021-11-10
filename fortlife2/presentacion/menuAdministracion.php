@@ -1,6 +1,6 @@
 <?php // Menu
-include_once("logica/Administrador.php");
-include_once("logica/Agente.php");
+include_once("logica/administrador.php");
+include_once("logica/agente.php");
 $administrador = new Administrador($_SESSION["id"]);
 $administrador -> consultar();
 ?>
@@ -15,7 +15,7 @@ $administrador -> consultar();
     <div class="bg-dark">  
         <nav class="navbar navbar-expand-md   navbar-dark">
             <div class="container-fluid">
-                <a href="index.php?pid=presentacion/Agente/consultarAgente" class="navbar-brand" ><span class="fas fa-home" aria-hidden="true"></span></a>
+                <a href="index.php?pid=presentacion/agente/consultarAgente" class="navbar-brand" ><span class="fas fa-home" aria-hidden="true"></span></a>
                     <button type="button" 
                         class="navbar-toggler" 
                         data-bs-toggle="collapse" 
@@ -28,8 +28,8 @@ $administrador -> consultar();
                     <li class="nav-item dropdown ">
                         <a class="nav-link active dropdown-toggle" href="#"role="button" data-bs-toggle="dropdown">Crear</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.php?pid=presentacion/Admon/consultarAdministrador">Administrador</a></li>
-                            <li><a class="dropdown-item" href="index.php?pid=presentacion/Agente/consultarAgente">Agente</a></li>
+                            <li><a class="dropdown-item" href="index.php?pid=presentacion/admon/consultarAdministrador">Administrador</a></li>
+                            <li><a class="dropdown-item" href="index.php?pid=presentacion/agente/consultarAgente">Agente</a></li>
                         </ul>
                     </li>        
                             <li class="nav-item dropdown">

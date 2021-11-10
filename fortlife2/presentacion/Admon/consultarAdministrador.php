@@ -48,18 +48,18 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                         echo "<td>" . $p -> getApellido() . "</td>"; 
                         echo "<td>" . $p -> getCargo() . "</td>"; 
                         echo "<td nowrap>";
-                        echo "<a href='index.php?pid=" . ("presentacion/Admon/actualizarPersona") . "& idAdministrador=" . $p -> getIdAdministrador() . "'>
+                        echo "<a href='index.php?pid=" . ("presentacion/admon/actualizarPersona") . "& idAdministrador=" . $p -> getIdAdministrador() . "'>
                         <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Administrador'>
                         </span>
                         </a>";
-                        echo "<a href='index.php?pid=" . ("presentacion/Admon/consultarAgente") . "& idAdministrador=" .$p -> getIdAdministrador() . "&action=delete' onclick='return confirm(\"Confirma eliminar el Agente: " .$p -> getNombre() . "\")'>
+                        echo "<a href='index.php?pid=" . ("presentacion/admon/consultarAgente") . "& idAdministrador=" .$p -> getIdAdministrador() . "&action=delete' onclick='return confirm(\"Confirma eliminar el Agente: " .$p -> getNombre() . "\")'>
                         <span class='fas fa-cut' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Eliminar Administrador'>
                         </span>
                         </a>";
                         echo "</td>";
                         echo "</tr>";
                              }
-                             echo "<a href='index.php?pid=" . ("presentacion/Admon/crearAdmon") . "'>
+                             echo "<a href='index.php?pid=" . ("presentacion/admon/crearAdmon") . "'>
                              <p>Nuevo Administrador</p>
                              <span class='fas fa-plus' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Crear Administrador'>
                              </span>
