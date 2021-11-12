@@ -80,7 +80,7 @@ if(isset($_POST["insertar"])){
         <div class="row">
             <div class="card" >
                 <div class="card-header">
-                    <h4 class="card-title">CREAR Agente</h4>
+                    <h4 class="card-title"><i class="fas fa-person-booth"></i> CREAR Agente</h4>
                     <div class="card-body" >
                         <?php if($procesado){ ?>
                         <div class="alert alert-success" >Datos Ingresados

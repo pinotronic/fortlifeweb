@@ -81,7 +81,7 @@ if(isset($_POST["insertar"])){
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">CREAR Administrador</h4>
+            <h4 class="card-title"><i class="fas fa-person-booth"></i> CREAR Administrador</h4>
         </div>
         <div class="card-body">
             <?php if($procesado){ ?>
@@ -93,43 +93,43 @@ if(isset($_POST["insertar"])){
         <?php } ?>
         <form id="form" action="" class="bootstrap-form needs-validation" method="POST">
             <div class="form-row">
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-2">
                     <label for="fecha">Fecha</label>
                     <input type="date" class="form-control" name="fecha" value="<?php $fecha=date("Y-m-d"); echo $fecha; ?>">
                 </div>
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-5">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" name="nombre" value="">
                 </div>
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-5">
                     <label for="apellido">Apellido</label>
                     <input type="text" class="form-control" name="apellido" value="">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-5">
                     <label for="direccion">Direccion</label>
                     <input type="text" class="form-control" name="direccion" value="">
                 </div>
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-4">
                     <label for="colonia">Colonia</label>
                     <input type="text" class="form-control" name="colonia" value="">
                 </div>
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-3">
                     <label for="ciudad">Ciudad</label>
                     <input type="text" class="form-control" name="ciudad" value="">
                 </div>
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-2">
                     <label for="estado">Estado</label>
                     <input type="text" class="form-control" name="estado" value="">
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-2">
                     <label for="correo">Correo</label>
                     <input type="text" class="form-control" name="correo" value="">
                 </div>
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-2">
                     <label for="clave">Clave</label>
                     <input type="text" class="form-control" name="clave" value="">
                 </div>
@@ -155,14 +155,14 @@ if(isset($_POST["insertar"])){
                     <label for="curp">Curp</label>
                     <input type="text" class="form-control" name="curp" value="">
                 </div>
-                <div class="form-group">
+                <div class="col-12 col-sm-4 col-md-2">
                     <label for="fechaNacimiento">Fecha de Nacimiento</label>
                     <input type="date" class="form-control" name="fechaNacimiento" value="">
                 </div>
                 </div>
-                <div class="form-row">
+                <div class="col-12 col-sm-4 col-md-2">
 
-                <div class="form-check">
+                <div class="form-check" >
                     <?php  $valor=""; if($status == "1"){$valor="on";} ?>
                     <input class="form-check-input" type="checkbox" id="status" name="status" value="1" checked="">
                     <label class="form-check-label" for="gridCheck1">
@@ -177,7 +177,7 @@ if(isset($_POST["insertar"])){
                     </select>
                 </div>
                 </div>
-                <button type="submit" class="btn btn-pinfo" name="insertar">Crear</button>
+                <button  type="submit" class="btn btn-primary" name="insertar">Crear</button>
         </form>
 
         </div>

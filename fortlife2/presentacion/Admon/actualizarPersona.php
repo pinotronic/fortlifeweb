@@ -8,7 +8,6 @@ $actPersona = new Administrador($idPersona);
 $actPersona -> consultar();
 $login = new Login();
 $Autorizado = $login -> verificarPermiso($idPersona);
-var_dump($Autorizado);
 $nombre = "";
 
 $fecha = date("Y-m-d");
@@ -82,8 +81,6 @@ if(isset($_POST["actualizar"])){
         $status = "1";}
     $administrador = new Administrador($idPersona, $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo);
     $administrador -> actualizar();
-    var_dump($Autorizado);
-    var_dump($valorPermiso);
     if( $Autorizado != true && $valorPermiso = "checked"){
         $idAgente="";
         $idAdministrador=$idPersona;

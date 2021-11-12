@@ -18,7 +18,7 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Listado de Agentes</h4>
+            <h4 class="card-title"><i class="far fa-address-book"></i> Listado de Agentes</h4>
         </div>
         <div class="card-body">
             <?php if(isset($_GET['action'])&& $_GET['action']=="delete"){?>
@@ -52,10 +52,6 @@ if(isset($_GET["action"]) && $_GET["action"]=="delete"){
                         echo "<td nowrap>";
                         echo "<a href='index.php?pid=" . ("presentacion/agente/actualizarAgente") . "& idAgente=" . $p -> getIdAgente() . "'>
                         <span class='fas fa-edit' data-toggle='tooltip' data-placement='left' class='tooltipLink' data-original-title='Editar Agente'>
-                        </span>
-                        </a>";
-                        echo "<a href='index.php?pid=" . ("presentacion/agente/consultarAgente") . "& idAgente=" .$p -> getIdAgente() . "&action=delete' onclick='return confirm(\"Confirma eliminar el Agente: " .$p -> getNombre() . "\")'>
-                        <span class='fas fa-cut' data-toggle='tooltip' data-placement='left'  class='tooltipLink' data-original-title='Eliminar Agente'>
                         </span>
                         </a>";
                         echo "</td>";

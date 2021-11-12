@@ -30,6 +30,7 @@ $administrador -> consultar();
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="index.php?pid=presentacion/admon/consultarAdministrador">Administrador</a></li>
                             <li><a class="dropdown-item" href="index.php?pid=presentacion/agente/consultarAgente">Agente</a></li>
+                            <li><a class="dropdown-item" href="index.php?pid=presentacion/login/consultarUsuario">Usuario</a></li>
                         </ul>
                     </li>        
                             <li class="nav-item dropdown">
