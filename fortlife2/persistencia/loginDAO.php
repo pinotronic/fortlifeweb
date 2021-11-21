@@ -1,14 +1,14 @@
 <?php
 class LoginDAO{
-    public $idUsuario;
+    public $idPersona;
     public $correo;
     public $clave;
     public $idAgente;
     public $idAdministrador;
     public $status;
 
-    public function __construct($pidUsuario="", $pCorreo="", $pClave="", $pIdAgente="", $pIdAdministrador="", $pStatus=""){
-        $this->idUsuario = $pidUsuario;
+    public function __construct($pidPersona="", $pCorreo="", $pClave="", $pIdAgente="", $pIdAdministrador="", $pStatus=""){
+        $this->idPersona = $pidPersona;
         $this->correo = $pCorreo;
         $this->clave = $pClave;
         $this->idAgente = $pIdAgente;
@@ -45,7 +45,20 @@ class LoginDAO{
     function consultar(){
         return "select idPersona, correo, clave, idAgente, idAdministrador, status
                     from loginn
-                    where idPersona = \"" . $this -> idUsuario . "\"";
+                    where idPersona = \"" . $this -> idPersona . "\"";
     }
+    function actualizar(){
+        $clave ="";
+        $clave = md5($this-> clave);
+        return "update loginn set
+                correo = \"" . $this -> correo . "\",
+                clave = \"" . $clave . "\",
+                idAgente = \"" . $this -> idAgente . "\",
+                idAdministrador = \"" . $this -> idAdministrador . "\",
+                status = \"" . $this -> status . "\"
+                where idPersona = \"" . $this -> idPersona . "\"";
+
+    }
+
 }
 ?>

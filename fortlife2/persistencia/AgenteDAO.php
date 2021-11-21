@@ -35,6 +35,7 @@ class AgenteDAO {
     public $polizaRC;
     public $fechaVigenciaPolizaRC;
     public $fechaEscuelaComercial;
+    
     public function __construct($pIdAgente="", $pFecha="", $pNombre="", $pApellido="", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarrera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial="") {
         $this -> idAgente = $pIdAgente;
         $this -> fecha = $pFecha;
@@ -141,41 +142,41 @@ class AgenteDAO {
         $clave ="";
         $clave = md5($this-> clave);
         return "update agente set
-        fecha = \"" . $this -> fecha . "\",
-        nombre = \"" . $this -> nombre . "\",
-        apellido = \"" . $this -> apellido . "\",
-        direccion = \"" . $this -> direccion . "\",
-        colonia = \"" . $this -> colonia . "\",
-        ciudad = \"" . $this -> ciudad . "\",
-        estado = \"" . $this -> estado . "\",
-        correo = \"" . $this -> correo . "\",
-        clave = \"" . $this -> clave . "\",
-        foto = \"" . $this -> foto . "\",
-        telefono = \"" . $this -> telefono . "\",
-        celular = \"" . $this -> celular . "\",
-        rfc = \"" . $this -> rfc . "\",
-        curp = \"" . $this -> curp . "\",
-        fechaNacimiento = \"" . $this -> fechaNacimiento . "\",
-        status = \"" . $this -> status . "\",
-        cargo = \"" . $this -> cargo . "\",
-        fechaAlta = \"" . $this -> fechaAlta . "\",
-        fechaEntrevistaInicial = \"" . $this -> fechaEntrevistaInicial . "\",    
-        fechaEntrevistaSeleccion = \"" . $this -> fechaEntrevistaSeleccion . "\",
-        fechaEntrevistaDirector = \"" . $this -> fechaEntrevistaDirector . "\",
-        fechaEntrevistaCarrera = \"" . $this -> fechaEntrevistaCarrera . "\",
-        plaza = \"" . $this -> plaza . "\", 
-        claveTemporal = \"" . $this -> claveTemporal . "\",
-        fechaClaveTemporal = \"" . $this -> fechaClaveTemporal . "\",
-        clavePermanente = \"" . $this -> clavePermanente . "\",
-        fechaClavePermanente = \"" . $this -> fechaClavePermanente . "\",
-        fechaEscuelaCedula = \"" . $this -> fechaEscuelaCedula . "\",
-        fechaExamen = \"" . $this -> fechaExamen . "\",
-        cedula = \"" . $this -> cedula . "\",
-        fechaVigenciaCedula = \"" . $this -> fechaVigenciaCedula . "\",
-        polizaRC = \"" . $this -> polizaRC . "\",
-        fechaVigenciaPolizaRC = \"" . $this -> fechaVigenciaPolizaRC . "\",
-        fechaEscuelaComercial = \"" . $this -> fechaEscuelaComercial . "\"
-        where idAgente = \"" . $this -> idAgente . "\"";
+                fecha = \"" . $this -> fecha . "\",
+                nombre = \"" . $this -> nombre . "\",
+                apellido = \"" . $this -> apellido . "\",
+                direccion = \"" . $this -> direccion . "\",
+                colonia = \"" . $this -> colonia . "\",
+                ciudad = \"" . $this -> ciudad . "\",
+                estado = \"" . $this -> estado . "\",
+                correo = \"" . $this -> correo . "\",
+                clave = \"" . $this -> clave . "\",
+                foto = \"" . $this -> foto . "\",
+                telefono = \"" . $this -> telefono . "\",
+                celular = \"" . $this -> celular . "\",
+                rfc = \"" . $this -> rfc . "\",
+                curp = \"" . $this -> curp . "\",
+                fechaNacimiento = \"" . $this -> fechaNacimiento . "\",
+                status = \"" . $this -> status . "\",
+                cargo = \"" . $this -> cargo . "\",
+                fechaAlta = \"" . $this -> fechaAlta . "\",
+                fechaEntrevistaInicial = \"" . $this -> fechaEntrevistaInicial . "\",    
+                fechaEntrevistaSeleccion = \"" . $this -> fechaEntrevistaSeleccion . "\",
+                fechaEntrevistaDirector = \"" . $this -> fechaEntrevistaDirector . "\",
+                fechaEntrevistaCarrera = \"" . $this -> fechaEntrevistaCarrera . "\",
+                plaza = \"" . $this -> plaza . "\", 
+                claveTemporal = \"" . $this -> claveTemporal . "\",
+                fechaClaveTemporal = \"" . $this -> fechaClaveTemporal . "\",
+                clavePermanente = \"" . $this -> clavePermanente . "\",
+                fechaClavePermanente = \"" . $this -> fechaClavePermanente . "\",
+                fechaEscuelaCedula = \"" . $this -> fechaEscuelaCedula . "\",
+                fechaExamen = \"" . $this -> fechaExamen . "\",
+                cedula = \"" . $this -> cedula . "\",
+                fechaVigenciaCedula = \"" . $this -> fechaVigenciaCedula . "\",
+                polizaRC = \"" . $this -> polizaRC . "\",
+                fechaVigenciaPolizaRC = \"" . $this -> fechaVigenciaPolizaRC . "\",
+                fechaEscuelaComercial = \"" . $this -> fechaEscuelaComercial . "\"
+                where idAgente = \"" . $this -> idAgente . "\"";
     }
 }
 ?>

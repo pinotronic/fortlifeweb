@@ -1,13 +1,14 @@
 <?php //Objetivo: Editar / Actualizar Agente
-
+include_once("logica/agente.php");
 $procesado = false;
-$idPersona = $_GET["idAgente"];
+$idAgente = $_GET["idAgente"];
 //var_dump($_GET);
-$actAgente = new Agente($idPersona);
+$actAgente = new Agente($idAgente);
 $actAgente -> consultar();
+var_dump($actAgente);
 $nombre = "";
 //var_dump($_POST);
-include_once("logica/agente.php");
+
 $procesado = false;
 $fecha = "";
 if(isset($_POST["fecha"])){
@@ -77,59 +78,77 @@ $cargo = "";
 if(isset($_POST["cargo"])){
     $cargo = $_POST["cargo"];
 }
+$fechaAlta = "";
 if(isset($_POST["fechaAlta"])){
     $fechaAlta = $_POST["fechaAlta"];
 }
+$fechaEntrevistaInicial = "";
 if(isset($_POST["fechaEntrevistaInicial"])){
     $fechaEntrevistaInicial = $_POST["fechaEntrevistaInicial"];
 }
+$fechaEntrevistaSeleccion = "";
 if(isset($_POST["fechaEntrevistaSeleccion"])){
     $fechaEntrevistaSeleccion = $_POST["fechaEntrevistaSeleccion"];
 }
+$fechaEntrevistaDirector = "";
 if(isset($_POST["fechaEntrevistaDirector"])){
     $fechaEntrevistaDirector = $_POST["fechaEntrevistaDirector"];
 }
+$fechaEntrevistaCarrera = "";
 if(isset($_POST["fechaEntrevistaCarrera"])){
     $fechaEntrevistaCarrera = $_POST["fechaEntrevistaCarrera"];
 }
+$plaza = "";
 if(isset($_POST["plaza"])){
     $plaza = $_POST["plaza"];
 }
+$claveTemporal = "";
 if(isset($_POST["claveTemporal"])){
     $claveTemporal = $_POST["claveTemporal"];
 }
+$fechaClaveTemporal = "";
 if(isset($_POST["fechaClaveTemporal"])){
     $fechaClaveTemporal = $_POST["fechaClaveTemporal"];
 }
+$clavePermanente = "";
 if(isset($_POST["clavePermanente"])){
     $clavePermanente = $_POST["clavePermanente"];
 }
+$fechaClavePermanente = "";
 if(isset($_POST["fechaClavePermanente"])){
     $fechaClavePermanente = $_POST["fechaClavePermanente"];
 }
+$fechaEscuelaCedula = "";
 if(isset($_POST["fechaEscuelaCedula"])){
     $fechaEscuelaCedula = $_POST["fechaEscuelaCedula"];
 }
+$fechaExamen = "";
 if(isset($_POST["fechaExamen"])){
     $fechaExamen = $_POST["fechaExamen"];
 }
+$cedula = "";
 if(isset($_POST["cedula"])){
     $cedula = $_POST["cedula"];
 }
+$fechaVigenciaCedula = "";
 if(isset($_POST["fechaVigenciaCedula"])){
     $fechaVigenciaCedula = $_POST["fechaVigenciaCedula"];
 }
+$polizaRC = "";
 if(isset($_POST["polizaRC"])){
     $polizaRC = $_POST["polizaRC"];
 }
+$fechaVigenciaPolizaRC = "";
 if(isset($_POST["fechaVigenciaPolizaRC"])){
     $fechaVigenciaPolizaRC = $_POST["fechaVigenciaPolizaRC"];
 }
+$fechaEscuelaComercial = "";
 if(isset($_POST["fechaEscuelaComercial"])){
     $fechaEscuelaComercial = $_POST["fechaEscuelaComercial"];
 }
 if(isset($_POST["actualizar"])){
-    $agente = new Agente($idPersona, $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo, $fechaAlta, $fechaEntrevistaInicial, $fechaEntrevistaSeleccion, $fechaEntrevistaDirector, $fechaEntrevistaCarrera, $plaza, $claveTemporal, $fechaClaveTemporal, $clavePermanente, $fechaClavePermanente, $fechaEscuelaCedula, $fechaExamen, $cedula, $fechaVigenciaCedula, $polizaRC, $fechaVigenciaPolizaRC, $fechaEscuelaComercial);
+    $agente = new Agente($idAgente, $fecha, $nombre, $apellido, $direccion, $colonia, $ciudad, $estado, $correo, $clave, $foto, $telefono, $celular, $rfc, $curp, $fechaNacimiento, $status, $cargo, $fechaAlta, $fechaEntrevistaInicial, $fechaEntrevistaSeleccion, $fechaEntrevistaDirector, $fechaEntrevistaCarrera, $plaza, $claveTemporal, $fechaClaveTemporal, $clavePermanente, $fechaClavePermanente, $fechaEscuelaCedula, $fechaExamen, $cedula, $fechaVigenciaCedula, $polizaRC, $fechaVigenciaPolizaRC, $fechaEscuelaComercial);
+    var_dump($agente);
     $agente -> actualizar();
     $procesado = true;
 }
@@ -139,7 +158,7 @@ if(isset($_POST["actualizar"])){
         <div class="row">
             <div class="card" >
                 <div class="card-header">
-                    <h4 class="card-title">Editar Agente</h4>
+                    <h4 class="card-title"><i class="fas fa-at"> Editar Agente</i></h4>
                     <div class="card-body" >
                         <?php if($procesado){ ?>
                         <div class="alert alert-success" >Datos Ingresados
@@ -191,7 +210,7 @@ if(isset($_POST["actualizar"])){
                                 <div class="row g-3">
                                 <div class="form-group">
                                         <label for="idAgente">Id</label>
-                                        <input type="text" class="form-control" name="idAgente" value="<?php echo $idPersona; ?>">
+                                        <input type="text" class="form-control" name="idAgente" value="<?php echo $idAgente; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="fecha">Fecha</label>

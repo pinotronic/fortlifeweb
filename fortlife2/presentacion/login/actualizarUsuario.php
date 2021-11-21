@@ -28,7 +28,8 @@ if(isset($_POST["status"])){
     $status = $_POST["status"];
 }
 if(isset($_POST["actualizar"])) {
-    $usuario= new Login($idUsuario, $correo, $clave, $idAgente, $idAdministrador, $status);
+    $usuario= new Login($idPersona, $correo, $clave, $idAgente, $idAdministrador, $status);
+    var_dump($usuario);
     $usuario->actualizar();
     $procesado = true;
 }
@@ -54,7 +55,7 @@ if(isset($_POST["actualizar"])) {
         $idAdministrador = ($actPersona -> getIdAdministrador());
         $status = ($actPersona -> getStatus());
         ?>
-        <form action="<?php echo $_SERVER['PHP_SELF']."?idUsuario=".$idPersona; ?>" method="POST">
+        <form action="" method="POST">
             <div class="form-group">
                 <label for="correo">Correo</label>
                 <input type="text" class="form-control" id="correo" name="correo" value="<?php echo $correo; ?>" required>

@@ -23,7 +23,7 @@ class Agente{
     public $fechaEntrevistaInicial; 
     public $fechaEntrevistaSeleccion; 
     public $fechaEntrevistaDirector; 
-    public $fechaEntrevistaCarera; 
+    public $fechaEntrevistaCarrera; 
     public $plaza; 
     public $claveTemporal; 
     public $fechaClaveTemporal; 
@@ -249,41 +249,42 @@ class Agente{
     }
 
     public function __construct( $pIdAgente="", $pFecha="", $pNombre="", $pApellido="", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial="" ){
-        $this -> idAgente = $pIdAgente; 
-        $this -> fecha = $pFecha; 
-        $this -> nombre = $pNombre; 
-        $this -> apellido = $pApellido; 
-        $this -> direccion = $pDireccion; 
-        $this -> colonia = $pColonia; 
-        $this -> ciudad = $pCiudad; 
-        $this -> estado = $pEstado; 
-        $this -> correo = $pCorreo; 
-        $this -> clave = $pClave; 
-        $this -> foto = $pFoto; 
-        $this -> telefono = $pTelefono; 
-        $this -> celular = $pCelular; 
-        $this -> rfc = $pRfc; 
-        $this -> curp = $pCurp; 
-        $this -> fechaNacimiento = $pFechaNacimiento; 
-        $this -> status = $pStatus; 
-        $this -> cargo = $pCargo; 
-        $this -> fechaAlta = $pFechaAlta; 
-        $this -> fechaEntrevistaInicial = $pFechaEntrevistaInicial; 
-        $this -> fechaEntrevistaSeleccion = $pFechaEntrevistaSeleccion; 
-        $this -> fechaEntrevistaDirector = $pFechaEntrevistaDirector; 
-        $this -> fechaEntrevistaCarrera = $pFechaEntrevistaCarera; 
-        $this -> plaza = $pPlaza; 
-        $this -> claveTemporal = $pClaveTemporal; 
-        $this -> fechaClaveTemporal = $pFechaClaveTemporal; 
-        $this -> clavePermanente = $pClavePermanente; 
-        $this -> fechaClavePermanente = $pFechaClavePermanente; 
-        $this -> fechaEscuelaCedula = $pFechaEscuelaCedula; 
-        $this -> fechaExamen = $pFechaExamen; 
-        $this -> cedula = $pCedula; 
-        $this -> fechaVigenciaCedula = $pFechaVigenciaCedula; 
-        $this -> polizaRC = $pPolizaRC; 
-        $this -> fechaVigenciaPolizaRC = $pFechaVigenciaPolizaRC; 
-        $this -> fechaEscuelaComercial = $pFechaEscuelaComercial; 
+        $this -> idAgente = $pIdAgente; #1
+        $this -> fecha = $pFecha; #2
+        $this -> nombre = $pNombre; #3 
+        $this -> apellido = $pApellido; #4
+        $this -> direccion = $pDireccion; #5
+        $this -> colonia = $pColonia; #6
+        $this -> ciudad = $pCiudad; #7
+        $this -> estado = $pEstado; #8
+        $this -> correo = $pCorreo; #9
+        $this -> clave = $pClave; #10
+        $this -> foto = $pFoto; #11
+        $this -> telefono = $pTelefono; #12
+        $this -> celular = $pCelular; #13
+        $this -> rfc = $pRfc; #14
+        $this -> curp = $pCurp; #15
+        $this -> fechaNacimiento = $pFechaNacimiento; #16
+        $this -> status = $pStatus; #17
+        $this -> cargo = $pCargo; #18
+        $this -> fechaAlta = $pFechaAlta; #19
+        $this -> fechaEntrevistaInicial = $pFechaEntrevistaInicial; #20
+        $this -> fechaEntrevistaSeleccion = $pFechaEntrevistaSeleccion; #21
+        $this -> fechaEntrevistaDirector = $pFechaEntrevistaDirector; #22
+        $this -> fechaEntrevistaCarrera = $pFechaEntrevistaCarera; #23
+        $this -> plaza = $pPlaza; #24
+        $this -> claveTemporal = $pClaveTemporal; #25
+        $this -> fechaClaveTemporal = $pFechaClaveTemporal; #26
+        $this -> clavePermanente = $pClavePermanente; #27
+        $this -> fechaClavePermanente = $pFechaClavePermanente; #28
+        $this -> fechaEscuelaCedula = $pFechaEscuelaCedula; #29
+        $this -> fechaExamen = $pFechaExamen; #30
+        $this -> cedula = $pCedula; #31
+        $this -> fechaVigenciaCedula = $pFechaVigenciaCedula; #32
+        $this -> polizaRC = $pPolizaRC; #33
+        $this -> fechaVigenciaPolizaRC = $pFechaVigenciaPolizaRC; #34
+        $this -> fechaEscuelaComercial = $pFechaEscuelaComercial; #35
+        
         $this -> agenteDAO = new AgenteDAO($this -> idAgente, $this -> fecha, $this -> nombre, $this -> apellido, $this -> direccion, $this -> colonia, $this -> ciudad, $this -> estado, $this -> correo, $this -> clave, $this -> foto, $this -> telefono, $this -> celular, $this -> rfc, $this -> curp, $this -> fechaNacimiento, $this -> status, $this -> cargo, $this -> fechaAlta, $this -> fechaEntrevistaInicial, $this -> fechaEntrevistaSeleccion, $this -> fechaEntrevistaDirector, $this -> fechaEntrevistaCarrera, $this -> plaza, $this -> claveTemporal, $this -> fechaClaveTemporal, $this -> clavePermanente, $this -> fechaClavePermanente, $this -> fechaEscuelaCedula, $this -> fechaExamen, $this -> cedula, $this -> fechaVigenciaCedula, $this -> polizaRC, $this -> fechaVigenciaPolizaRC, $this -> fechaEscuelaComercial);
         $this -> conexion = new Conexion();
     }
@@ -333,7 +334,7 @@ class Agente{
             $this -> clavePermanente = $resultado[26];
             $this -> fechaClavePermanente = $resultado[27];
             $this -> fechaEscuelaCedula = $resultado[28];
-            $this -> fechaExame = $resultado[29];
+            $this -> fechaExamen = $resultado[29];
             $this -> cedula = $resultado[30];
             $this -> fechaVigenciaCedula = $resultado[31];
             $this -> polizaRC = $resultado[32];

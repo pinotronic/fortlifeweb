@@ -138,5 +138,10 @@ class Login{
         return false;
         }
     }
+    function actualizar(){
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> loginDAO -> actualizar());
+        $this -> conexion -> close();
+    }
 }
 ?>

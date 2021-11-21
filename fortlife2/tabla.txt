@@ -117,3 +117,8 @@ CREATE TABLE loginn(
     idAdministrador int(11) NOT NULL,
     status tinyint(4) NOT NULL,
     PRIMARY KEY (idPersona));
+
+prueba para saber si me llena texto copilot hay que ver si se puede hacer una tabla de loginn
+INSERT INTO loginn(correo, clave, idAgente, idAdministrador, status)
+VALUES
+("
