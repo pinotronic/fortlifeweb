@@ -1,6 +1,7 @@
 <?php // Menu
 include_once("logica/administrador.php");
 include_once("logica/agente.php");
+include_once("logica/veinticincoPuntos.php");
 $administrador = new Administrador($_SESSION["id"]);
 $administrador -> consultar();
 ?>
@@ -34,7 +35,7 @@ $administrador -> consultar();
                         </ul>
                     </li>        
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">25 Puntos</a>
+                                <a class="nav-link dropdown-toggle" href="index.php?pid=presentacion/admon/tabla" data-toggle="dropdown" > 25 Puntos</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="index.php?pid=presentacion/consultarAdministrador.php">Administrador</a>
                                 </div>
@@ -70,6 +71,3 @@ $administrador -> consultar();
         </nav>
     </div>
 </div
-
-
-    

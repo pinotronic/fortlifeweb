@@ -42,213 +42,213 @@ class Agente{
     }
     function getIdAgente(){
         return $this->idAgente;
-    }    
+    }//end of IdAgente 1
     function setFecha($pFecha){
         $this->fecha = $pFecha;
     }
     function getFecha(){
         return $this->fecha;
-    }
+    }//end of Fecha 2
     function setNombre($pNombre){
         $this->nombre = $pNombre;
     }
     function getNombre(){
         return $this->nombre;
-    }
+    }//end of Nombre 3
     function setApellido($pApellido){
         $this->apellido = $pApellido;
     }
     function getApellido(){
         return $this->apellido;
-    }
+    }//end of Apellido 4
     function setDireccion($pDireccion){
         $this->direccion = $pDireccion;
     }
     function getDireccion(){
         return $this->direccion;
-    }
+    }//end of Direccion 5
     function setColonia($pColonia){
         $this->colonia = $pColonia;
     }
     function getColonia(){
         return $this->colonia;
-    }
+    }//end of Colonia 6
     function setCiudad($pCiudad){
         $this->ciudad = $pCiudad;
     }
     function getCiudad(){
         return $this->ciudad;
-    }
+    }//end of Ciudad 7
     function setEstado($pEstado){
         $this->estado = $pEstado;
     }
     function getEstado(){
         return $this->estado;
-    }
+    }// end of Estado 8
     function setCorreo($pCorreo){
         $this->correo = $pCorreo;
     }
     function getCorreo(){
         return $this->correo;
-    }
+    }//end of Correo 9
     function setClave($pClave){
         $this->clave = $pClave;
     }
     function getClave(){
         return $this->clave;
-    }
+    }//end of Clave 10
     function setFoto($pFoto){
         $this->foto = $pFoto;
     }
     function getFoto(){
         return $this->foto;
-    }
+    }//end of Foto 11
     function setTelefono($pTelefono){
         $this->telefono = $pTelefono;
     }
     function getTelefono(){
         return $this->telefono;
-    }
+    }// end of Telefono 12
     function setCelular($pCelular){
         $this->celular = $pCelular;
     }
     function getCelular(){
         return $this->celular;
-    }
+    }// end of Celular 13
     function setRfc($pRfc){
         $this->rfc = $pRfc;
     }
     function getRfc(){
         return $this->rfc;
-    }
+    } //end of Rfc 14
     function setCurp($pCurp){
         $this->curp = $pCurp;
     }
     function getCurp(){
         return $this->curp;
-    }
+    }//end of Curp 15
     function setFechaNacimiento($pFechaNacimiento){
         $this->fechaNacimiento = $pFechaNacimiento;
     }
     function getFechaNacimiento(){
         return $this->fechaNacimiento;
-    }
+    }// end of FechaNacimiento 16
     function setStatus($pStatus){
         $this->status = $pStatus;
     }
     function getStatus(){
         return $this->status;
-    }
+    }// end of Status 17
     function setCargo($pCargo){
         $this->cargo = $pCargo;
     }
     function getCargo(){
         return $this->cargo;
-    }
+    }// end of Cargo 18
     function setFechaAlta($pFechaAlta){
         $this->fechaAlta = $pFechaAlta;
     }
     function getFechaAlta(){
         return $this->fechaAlta;
-    }
+    }// end of FechaAlta 19
     function setFechaEntrevistaInicial($pFechaEntrevistaInicial){
         $this->fechaEntrevistaInicial = $pFechaEntrevistaInicial;
     }
     function getFechaEntrevistaInicial(){
         return $this->fechaEntrevistaInicial;
-    }
+    }// end of FechaEntrevistaInicial 20
     function setFechaEntrevistaSeleccion($pFechaEntrevistaSeleccion){
         $this->fechaEntrevistaSeleccion = $pFechaEntrevistaSeleccion;
     }
     function getFechaEntrevistaSeleccion(){
         return $this->fechaEntrevistaSeleccion;
-    }
+    }// end of FechaEntrevistaSeleccion 21
     function setFechaEntrevistaDirector($pFechaEntrevistaDirector){
         $this->fechaEntrevistaDirector = $pFechaEntrevistaDirector;
     }
     function getFechaEntrevistaDirector(){
         return $this->fechaEntrevistaDirector;
-    }
+    }// end of FechaEntrevistaDirector 22
     function setFechaEntrevistaCarrera($pFechaEntrevistaCarrera){
         $this->fechaEntrevistaCarrera = $pFechaEntrevistaCarrera;
     }
     function getFechaEntrevistaCarrera(){
         return $this->fechaEntrevistaCarrera;
-    }
+    }// end of FechaEntrevistaCarrera 23
     function setPlaza($pPlaza){
         $this->plaza = $pPlaza;
     }
     function getPlaza(){
         return $this->plaza;
-    }
+    }// end of Plaza 24
     function setClaveTemporal($pClaveTemporal){
         $this->claveTemporal = $pClaveTemporal;
     }
     function getClaveTemporal(){
         return $this->claveTemporal;
-    }
+    }// end of ClaveTemporal 25
     function setFechaClaveTemporal($pFechaClaveTemporal){
         $this->fechaClaveTemporal = $pFechaClaveTemporal;
     }
     function getFechaClaveTemporal(){
         return $this->fechaClaveTemporal;
-    }
+    }// end of FechaClaveTemporal 26
     function setClavePermanente($pClavePermanente){
         $this->clavePermanente = $pClavePermanente;
     }
     function getClavePermanente(){
         return $this->clavePermanente;
-    }
+    }// end of ClavePermanente 27
     function setFechaClavePermanente($pFechaClavePermanente){
         $this->fechaClavePermanente = $pFechaClavePermanente;
     }
     function getFechaClavePermanente(){
         return $this->fechaClavePermanente;
-    }
+    }// end of FechaClavePermanente 28
     function setFechaEscuelaCedula($pFechaEscuelaCedula){
         $this->fechaEscuelaCedula = $pFechaEscuelaCedula;
     }
     function getFechaEscuelaCedula(){
         return $this->fechaEscuelaCedula;
-    }
+    }// end of FechaEscuelaCedula 29
     function setFechaExamen($pFechaExamen){
         $this->fechaExamen = $pFechaExamen;
     }
     function getFechaExamen(){
         return $this->fechaExamen;
-    }
+    }// end of FechaExamen 30
     function setCedula($pCedula){
         $this->cedula = $pCedula;
     }
     function getCedula(){
         return $this->cedula;
-    }
+    }// end of Cedula 31
     function setFechaVigenciaCedula($pFechaVigenciaCedula){
         $this->fechaVigenciaCedula = $pFechaVigenciaCedula;
     }
     function getFechaVigenciaCedula(){
         return $this->fechaVigenciaCedula;
-    }
+    }// end of FechaVigenciaCedula 32
     function setPolizaRC($pPolizaRC){
         $this->polizaRC = $pPolizaRC;
     }
     function getPolizaRC(){
         return $this->polizaRC;
-    }
+    }// end of PolizaRC 33
     function setFechaVigenciaPolizaRC($pFechaVigenciaPolizaRC){
         $this->fechaVigenciaPolizaRC = $pFechaVigenciaPolizaRC;
     }
     function getFechaVigenciaPolizaRC(){
         return $this->fechaVigenciaPolizaRC;
-    }
+    }// end of FechaVigenciaPolizaRC 34
     function setFechaEscuelaComercial($pFfechaEscuelaComercial){
         $this->fechaEscuelaComercial = $pFfechaEscuelaComercial;
     }
     function getFechaEscuelaComercial(){
         return $this->fechaEscuelaComercial;
-    }
+    }// end of FechaEscuelaComercial 35
 
-    public function __construct( $pIdAgente="", $pFecha="", $pNombre="", $pApellido="", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial="" ){
+    public function __construct( $pIdAgente="", $pFecha="", $pNombre="", $pApellido="", $pDireccion="", $pColonia="", $pCiudad="", $pEstado="", $pCorreo="", $pClave="", $pFoto="", $pTelefono="", $pCelular="", $pRfc="", $pCurp="", $pFechaNacimiento="", $pStatus="", $pCargo="", $pFechaAlta="", $pFechaEntrevistaInicial="", $pFechaEntrevistaSeleccion="", $pFechaEntrevistaDirector="", $pFechaEntrevistaCarrera="", $pPlaza="", $pClaveTemporal="", $pFechaClaveTemporal="", $pClavePermanente="", $pFechaClavePermanente="", $pFechaEscuelaCedula="", $pFechaExamen="", $pCedula="", $pFechaVigenciaCedula="", $pPolizaRC="", $pFechaVigenciaPolizaRC="", $pFechaEscuelaComercial="" ){
         $this -> idAgente = $pIdAgente; #1
         $this -> fecha = $pFecha; #2
         $this -> nombre = $pNombre; #3 
@@ -271,7 +271,7 @@ class Agente{
         $this -> fechaEntrevistaInicial = $pFechaEntrevistaInicial; #20
         $this -> fechaEntrevistaSeleccion = $pFechaEntrevistaSeleccion; #21
         $this -> fechaEntrevistaDirector = $pFechaEntrevistaDirector; #22
-        $this -> fechaEntrevistaCarrera = $pFechaEntrevistaCarera; #23
+        $this -> fechaEntrevistaCarrera = $pFechaEntrevistaCarrera; #23
         $this -> plaza = $pPlaza; #24
         $this -> claveTemporal = $pClaveTemporal; #25
         $this -> fechaClaveTemporal = $pFechaClaveTemporal; #26
@@ -351,7 +351,7 @@ class Agente{
         $this -> conexion -> abrir();
         $this -> conexion -> ejecutar($this -> agenteDAO -> consultarTodo());
         $agente = array();
-        while ($resultado = $this -> conexion -> extraer()){
+        while ($resultado = $this -> conexion -> extraer()){         
             if(!empty($resultado)){
                 array_push($agente, new Agente($resultado[0],
                 $resultado[1],
@@ -388,12 +388,12 @@ class Agente{
                 $resultado[32],
                 $resultado[33],
                 $resultado[34]));
-                $this -> conexion -> close();
-        }else{
-           $this -> conexion -> close(); 
+
+            }
+                
+
         }
-        }
-        
+        $this -> conexion -> close(); 
         return $agente;
     }
 function eliminar(){

@@ -29,7 +29,6 @@ if(isset($_POST["status"])){
 }
 if(isset($_POST["actualizar"])) {
     $usuario= new Login($idPersona, $correo, $clave, $idAgente, $idAdministrador, $status);
-    var_dump($usuario);
     $usuario->actualizar();
     $procesado = true;
 }

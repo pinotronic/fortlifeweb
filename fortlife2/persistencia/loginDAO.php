@@ -59,6 +59,5 @@ class LoginDAO{
                 where idPersona = \"" . $this -> idPersona . "\"";
 
     }
-
 }
 ?>
